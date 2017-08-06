@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Yellowtail');
+@import "bootstrap";
+
+*{
+	font-family: 'Montserrat', sans-serif;
+	padding:0;
+	margin:0 auto;
+}
+.title{
+	font-weight:700;
+}
+#header{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	text-align:center;
+	width:100vw;
+	height:100vh;
+	background-image:asset-url('dimsumbg.jpeg');
+	background-size:cover;
+	background-position:center;
+	background-repeat:no-repeat;
+	.smaller-title{
+		font-size:3rem;
+		font-family: 'Yellowtail', cursive;
+	}
+	.title{
+		font-size:5.5rem;
+		font-family: 'Yellowtail', cursive;
+		font-weight:500;
+	}
+	.btn-custom{
+		margin-top:1.5rem;
+		border:.1px solid #888;
+		padding:15px;
+		transition:all 150ms ease-in-out;
+		border-radius:1.5%;
+	}
+	.btn-custom:hover{
+		background-color:#CFB53B;
+		color:#FFF;
+	}
+
+}
+
+#about, #menu, #gallery, #info{
+	padding:55px;
+}
