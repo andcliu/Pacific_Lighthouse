@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'devise', '~> 4.2'
 gem 'hirb'
+
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'erubis', '~> 2.7'
 gem 'jquery-rails'

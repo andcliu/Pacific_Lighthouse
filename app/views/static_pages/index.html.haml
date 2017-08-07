@@ -1,39 +1,108 @@
 #header
-	.col-sm-12
-		%h1.title
+	.col-sm-6.offset-sm-3.header-box
+		%h1.header-title
 			%span.smaller-title 
 				Alameda 
-			%br Paific Lighthouse
-		.btn.btn-custom
-			Order Online
+			%br Pacific Lighthouse
+		/ .btn.btn-custom
+		/ 	ORDER ONLINE
 
 
 #about
 	.row
 		.col-sm-6
+			.image-box
+				=image_tag "aboutdim.jpeg"
 		.col-sm-6
 			%h3.title
 				KEY POINTERS ABOUT US
-
-			%p
-				Welcome to the new and recently opened Pacific Lighthouse. Located at the outskirts and quietly huddled away in the Marina, Pacific Lighthouse is the perfect restaurant to bring family and friends for a quiet and breathtaking lunch or dinner. Enjoy authenthic and top of the line dimsum, dinner, and tea of all varieties bundled with superior customer service and a mangificent view of the Marina Harbor. Let us be your number location for all your parties, banquets, and other services.
-			%p
-				Pacific Lighthouse in Alameda has an array of services that we offer to our guests. We have an open bar where guests can sit and enjoy after meal with cable t.v set on local news and sports channels. In addition, we have a set of VIP rooms situated in our second floor, where we offer privacy or (if you're looking for a little fun) a full kareoke system side by side with 40 inch plasma hdtv's. If you need more space for your family & friends, we have an isolated "hall" on the first floor which will definitely be able to host to our occasion.
+			.about-content
+				%p
+					Welcome to the new and recently opened Pacific Lighthouse. Located at the outskirts and quietly huddled away in the Marina, Pacific Lighthouse is the perfect restaurant to bring family and friends for a quiet and breathtaking lunch or dinner. Enjoy authenthic and top of the line dimsum, dinner, and tea of all varieties bundled with superior customer service and a mangificent view of the Marina Harbor. Let us be your number location for all your parties, banquets, and other services.
+				%p
+					Pacific Lighthouse in Alameda has an array of services that we offer to our guests. We have an open bar where guests can sit and enjoy after meal with cable t.v set on local news and sports channels. In addition, we have a set of VIP rooms situated in our second floor, where we offer privacy or (if you're looking for a little fun) a full kareoke system side by side with 40 inch plasma hdtv's. If you need more space for your family & friends, we have an isolated "hall" on the first floor which will definitely be able to host to our occasion.
 
 #menu
+	.col-sm-12.text-center
+		%h3.title
+			MAIN MENU
+	.center.slider
+		%a{"data-fancybox" => "", :href => image_path("menu/appetizer.jpg")}
+			=image_tag "menu/appetizer.jpg"
 
-	%h3.title
-		MAIN MENU
+		%a{"data-fancybox" => "", :href => image_path("menu/bbq.jpg")}
+			=image_tag "menu/bbq.jpg"
 
+		%a{"data-fancybox" => "", :href => image_path("menu/beef_pork.jpg")}
+			=image_tag "menu/beef_pork.jpg"
+
+		%a{"data-fancybox" => "", :href => image_path("menu/claypot.jpg")}
+			=image_tag "menu/claypot.jpg"
+
+		%a{"data-fancybox" => "", :href => image_path("menu/dessert.jpg")}
+			=image_tag "menu/dessert.jpg"
+
+		%a{"data-fancybox" => "", :href => image_path("menu/liveseafood.jpg")}
+			=image_tag "menu/liveseafood.jpg"
+
+		%a{"data-fancybox" => "", :href => image_path("menu/poultry2.jpg")}
+			=image_tag "menu/poultry2.jpg"
+
+		%a{"data-fancybox" => "", :href => image_path("menu/premium.jpg")}
+			=image_tag "menu/premium.jpg"
+
+		%a{"data-fancybox" => "", :href => image_path("menu/rice.jpg")}
+			=image_tag "menu/rice.jpg"
+
+		%a{"data-fancybox" => "", :href => image_path("menu/seafood.jpg")}
+			=image_tag "menu/seafood.jpg"
+
+		%a{"data-fancybox" => "", :href => image_path("menu/soup.jpg")}
+			=image_tag "menu/soup.jpg"
+
+		%a{"data-fancybox" => "", :href => image_path("menu/extra.jpg")}
+			=image_tag "menu/extra.jpg"
 
 #gallery
+	.col-sm-12.text-center
+		%h3.title
+			GALLERY
+	.row
+		.col-sm-4.image-box
+			%a{"data-fancybox" => "", :href => image_path("bar.jpg")}
+				=image_tag "bar.jpg"
+		.col-sm-4.image-box
+			%a{"data-fancybox" => "", :href => image_path("main.jpg")}
+				=image_tag "main.jpg"
+		.col-sm-4.image-box
+			%a{"data-fancybox" => "", :href => image_path("newv2.jpg")}
+				=image_tag "newv2.jpg"
 
-	%h3.title
-		GALLERY
+	.row.gallery-bottom-row
+		.col-sm-4.image-box
+			%a{"data-fancybox" => "", :href => image_path("fish2.jpg")}
+				=image_tag "fish2.jpg"
+		.col-sm-4.image-box
+			%a{"data-fancybox" => "", :href => image_path("newv4.jpg")}
+				=image_tag "newv4.jpg"
+		.col-sm-4.image-box
+			%a{"data-fancybox" => "", :href => image_path("front.jpg")}
+				=image_tag "front.jpg"
+
+	.row.gallery-bottom-row
+		.col-sm-4.image-box
+			%a{"data-fancybox" => "", :href => image_path("fish.jpg")}
+				=image_tag "fish.jpg"
+		.col-sm-4.image-box
+			%a{"data-fancybox" => "", :href => image_path("vip2.jpg")}
+				=image_tag "vip2.jpg"
+		.col-sm-4.image-box
+			%a{"data-fancybox" => "", :href => image_path("vip.jpg")}
+				=image_tag "vip.jpg"
 
 #info
 	.row
-		.col-sm-6
+		.col-sm-5
 			%h3.title
 				BUSINESS INFORMATION
 			.col-sm-12
@@ -63,4 +132,21 @@
 					%br Dinner | 5:00PM - 10:00PM
 				%p
 					We're open on all major holidays.
-		.col-sm-6
+		.col-sm-7.maps
+			%iframe{:src => "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2672687171894!2d-122.2677239846821!3d37.78377577975781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f872b2ad641e3%3A0xc72a171ba19de788!2sPacific+Lighthouse!5e0!3m2!1sen!2sus!4v1499059133811", :width => "100%", :height => "525", :frameborder => "0" }
+
+
+
+/ #footer
+/ 	.col-sm-12
+/ 		.text-center
+/ 			%p
+/ 				Pacific Lighthouse 
+/ 				%br Copyright 2017
+/ 				All Rights Reserved
+
+
+/ #subfooter
+/ 	.col-sm-12
+/ 		.text-center
+/ 			Powered by Amplyfii

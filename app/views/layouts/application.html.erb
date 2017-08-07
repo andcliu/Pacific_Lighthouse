@@ -4,11 +4,98 @@
     <title>PacificOnlineOrder</title>
     <%= csrf_meta_tags %>
 
+
+	<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand" href="#">Navbar</a>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Features</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Pricing</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Dropdown link
+					</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+						<a class="dropdown-item" href="#">Action</a>
+						<a class="dropdown-item" href="#">Another action</a>
+						<a class="dropdown-item" href="#">Something else here</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
     <%= yield %>
+
+	<div id="footer">
+		<div class="col-sm-12 text-center">
+			<p>
+				Pacific Lighthouse 
+				<br> Copyright 2017
+				All Rights Reserved
+			</p>
+		</div>
+	</div>
+
+	<div id="subfooter">
+		<div class="col-sm-12 text-center">
+			Powered by Amplyfii
+		</div>
+	</div>
+
+
   </body>
+
+  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
+  <script type="text/javascript">
+  	$(document).ready(function(){
+		$(".center").slick({
+			dots: true,
+			arrows: true,
+			cssEase: 'ease',
+			infinite: true,
+			centerMode: true,
+			slidesToShow: 3,
+			slidesToScroll: 3,
+			responsive: [{
+				breakpoint: 480,
+				settings: {
+					slidesToScroll: 1,
+					dots: false
+				}
+			},
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToScroll: 4
+				}
+			}]
+		});
+		$('.maps').click(function () {
+		    $('.maps iframe').css("pointer-events", "auto");
+		});
+
+		$( ".maps" ).mouseleave(function() {
+		  $('.maps iframe').css("pointer-events", "none"); 
+		});
+  	})
+  </script>
 </html>
