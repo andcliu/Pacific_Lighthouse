@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Yellowtail|Raleway');
 @import "bootstrap";
+@import 'slick';
+@import 'slick-theme';
+
+.fixed-top{
+	.navbar-brand{
+		img{
+			width:68px;
+		}
+	}
+}
 
 *{
 	font-family: 'Raleway', sans-serif;
@@ -56,7 +66,7 @@
 
 }
 
-#about, #menu, #gallery, #info{
+#about, #menu, #gallery, #info, #sign-in-registration{
 	padding:75px;
 }
 
@@ -77,12 +87,12 @@
 		width:90%;
 		box-shadow:.1px .1px 1px #888;
 	}
-	li{
-	
-		vertical-align:top;
-		margin:1rem;
-		display:none;
+
+	.slick-arrow{
+		background-color:#888;
+		
 	}
+
 }
 
 #gallery{
@@ -115,4 +125,11 @@
 	background-color:#000;
 	padding:5px;
 	color:#fff;
+}
+
+#sign-in-registration{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	min-height:85vh;
 }

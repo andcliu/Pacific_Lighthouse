@@ -1,3 +1,5 @@
+
+
 #header
 	.col-sm-6.offset-sm-3.header-box
 		%h1.header-title
@@ -22,10 +24,12 @@
 				%p
 					Pacific Lighthouse in Alameda has an array of services that we offer to our guests. We have an open bar where guests can sit and enjoy after meal with cable t.v set on local news and sports channels. In addition, we have a set of VIP rooms situated in our second floor, where we offer privacy or (if you're looking for a little fun) a full kareoke system side by side with 40 inch plasma hdtv's. If you need more space for your family & friends, we have an isolated "hall" on the first floor which will definitely be able to host to our occasion.
 
+
 #menu
 	.col-sm-12.text-center
 		%h3.title
 			MAIN MENU
+	%input{:type => "hidden", :id => "refreshed", :value => "no"}
 	.center.slider
 		%a{"data-fancybox" => "", :href => image_path("menu/appetizer.jpg")}
 			=image_tag "menu/appetizer.jpg"

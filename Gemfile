@@ -20,15 +20,13 @@ gem 'uglifier', '>= 1.3.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'coffee-rails', '~> 4.2'
-gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'haml', '~> 4.0', '>= 4.0.7'
-gem 'devise', '~> 4.2'
 gem 'hirb'
-
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'erubis', '~> 2.7'
 gem 'jquery-rails'
+gem "jquery-slick-rails"
 gem 'bcrypt', '~> 3.1.7'
 
 
