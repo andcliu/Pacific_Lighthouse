@@ -1,0 +1,51 @@
+#order-page
+
+	%h3.title Welcome, #{current_user.full_name}
+
+	.row
+		.col-sm-8.pull-sm-2
+			%h4
+				Begin your order
+			#accordion{:role => "tablist", "aria-multiselectable" => "true"}
+				.card
+					.card-header{:role => "tab", :id => "heading1"}
+						.mb-0
+							%a{"data-toggle" => "collapse", "data-present" => "#accordion", :href => "#collapse1", "aria-expanded" => "true", "aria-controls" => "collapse1"}
+								Dim sum/lunch menu
+					#collapse1{:class => "collapse show", :role => "tabpanel", "aria-labelledby" => "heading1"}
+						.card-block
+							lasdjklasjfldksajfldskjlfdsjlfkadfdsaljlkadjflkadsfjl
+
+				.card
+					.card-header{:role => "tab", :id => "heading2"}
+						.mb-0
+							%a{"data-toggle" => "collapse", "data-present" => "#accordion", :href => "#collapse2", "aria-expanded" => "false", "aria-controls" => "collapse2"}
+								Dinner menu
+					#collapse2{:class => "collapse hide", :role => "tabpanel", "aria-labelledby" => "heading2"}
+						.card-block
+							lasdjklasjfldksajfldskjlfdsjlfkadfdsaljlkadjflkadsfjl
+
+		.col-sm-3.order-box
+
+			%input{:type => "button", :class => "btn btn-success btn-md", :value => "Place your order"}
+			%p By placing your order, you agree to our terms of service
+			%hr
+			%p.subtitle Order summary
+			.row
+				.col-sm-7
+					%h6 Total items:
+				.col-sm-5
+			.row
+				.col-sm-7
+					%h6 Delivery fee:
+				.col-sm-5
+					%h6 $0.00
+			.row
+				.col-sm-7
+					%h6 Tax:
+				.col-sm-5
+					$4.00
+
+			%hr
+			%p.subtitle
+				Order total: $0.00

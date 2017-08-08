@@ -5,11 +5,11 @@ class SessionsController < ApplicationController
 	def login
 		@user = User.find_by_email(params[:email])
 		if @user && @user.authenticate(params[:password])
-			session[:user_id] = @User.id
-			redirect_to root_path
+			session[:user_id] = @user.id
+			redirect_to order_page_path
 		else
 			flash[:login_errors] = "!! Error: \n Invalid Login Information. \n Please Try Again."
-			redirect_to root_path
+			redirect_to new_user_path
 		end
 	end
 	def logout

@@ -4,10 +4,23 @@
 @import 'slick-theme';
 
 .fixed-top{
+	background-color:#FFF !important;
+     -webkit-box-shadow: 0 8px 6px -6px #999;
+        -moz-box-shadow: 0 8px 6px -6px #999;
+             box-shadow: 0 8px 6px -6px #999;
+    max-height:4.5rem;
+    .navbar-nav{
+    	margin-right:-.5rem;
+    }
 	.navbar-brand{
 		img{
-			width:68px;
+			width:184px;
+			margin-top:1rem;
 		}
+	}
+	.nav-item{
+		margin:.5rem;
+	    text-transform: uppercase;
 	}
 }
 
@@ -35,7 +48,6 @@
 	height:100vh;
 	background-image:asset-url('dimsumbg.jpeg');
 	background-size:cover;
-	background-attachment:fixed;
 	background-position:center;
 	background-repeat:no-repeat;
 	color:#FFF;
@@ -66,7 +78,7 @@
 
 }
 
-#about, #menu, #gallery, #info, #sign-in-registration{
+#about, #menu, #gallery, #info, #sign-in-registration, #registration-address, #order-page{
 	padding:75px;
 }
 
@@ -90,7 +102,7 @@
 
 	.slick-arrow{
 		background-color:#888;
-		
+
 	}
 
 }
@@ -122,14 +134,48 @@
 }
 
 #subfooter{
-	background-color:#000;
-	padding:5px;
+	background-color:#494446;
+	padding:15px;
 	color:#fff;
 }
 
-#sign-in-registration{
+#sign-in-registration, #registration-address{
 	display:flex;
 	justify-content:center;
 	align-items:center;
+}
+#sign-in-registration{
+	min-height:100vh;
+}
+#registration-address{
 	min-height:85vh;
+}
+#order-page{
+	margin-top:3.5%;
+	min-height:100vh;
+	.btn{
+		width:100%;
+		border:.1px solid #000;
+	}
+	.subtitle{
+		font-weight:900;
+	}
+	.order-box{
+		border:.1px solid #f9f9f9;
+		padding:15px;
+		border-radius:1.5%;
+		position:fixed;
+		right:0;
+		margin-right:3.5rem;
+	}
+	.card{
+		margin-top:.5rem;
+		.card-header{
+			width:100%;
+			background-color:#494446;
+			a{
+				color:#FFF;
+			}
+		}
+	}
 }

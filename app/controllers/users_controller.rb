@@ -5,13 +5,13 @@ class UsersController < ApplicationController
 			if @new_user.valid?
 				puts "successfully saved that motherfucker"
 				session[:user_id] = @new_user.id
-				redirect_to root_path
+				redirect_to new_address_path
 			else
 				puts "failed registration"
 				redirect_to new_user_path
 			end
 	end
-	
+
 
 	private
 	def new_user_registration
