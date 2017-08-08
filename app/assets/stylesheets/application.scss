@@ -24,6 +24,9 @@
 	}
 }
 
+.subtitle{
+	font-weight:900;
+}
 *{
 	font-family: 'Raleway', sans-serif;
 	padding:0;
@@ -153,20 +156,17 @@
 #order-page{
 	margin-top:3.5%;
 	min-height:100vh;
-	.btn{
-		width:100%;
-		border:.1px solid #000;
-	}
-	.subtitle{
-		font-weight:900;
-	}
 	.order-box{
-		border:.1px solid #f9f9f9;
+		border:.1px solid #999;
 		padding:15px;
-		border-radius:1.5%;
+		border-radius:.75%;
 		position:fixed;
 		right:0;
 		margin-right:3.5rem;
+			.btn{
+				width:100%;
+				border:.1px solid #999;
+			}
 	}
 	.card{
 		margin-top:.5rem;
@@ -177,5 +177,25 @@
 				color:#FFF;
 			}
 		}
+	}
+	.deliv-info{
+		background-color:#F9F9F9;
+		padding:15px;
+		border-radius:.75%;
+		.btn{
+			border:.1px solid #999;
+		}
+		.modal-body{
+			input{
+				width:100%;
+			}
+		}
+	}
+	#recommended{
+		border:.1px solid #999;
+		padding:15px;
+		width:100%;
+		min-height:350px;
+		border-radius:.75%;
 	}
 }

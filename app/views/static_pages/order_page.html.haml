@@ -2,17 +2,80 @@
 
 	%h3.title Welcome, #{current_user.full_name}
 
+
+
 	.row
+
 		.col-sm-8.pull-sm-2
-			%h4
+			.row.deliv-info
+				.col-sm-3
+					%p.title Delivery information:
+				.col-sm-5
+					#{current_user.full_name}
+					%br
+					#{current_user.address.street}, #{current_user.address.city}
+					%br
+					#{current_user.address.state}, 
+					#{current_user.address.zipcode}
+					%br
+					#{current_user.phone}
+				.col-sm-4.text-right
+					%button{:class => "btn btn-info btn-sm", "data-toggle" => "modal", "data-target" => "#addressUpdate"}
+						Update address
+
+					#addressUpdate.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "3"}
+						.modal-dialog{:role => "document"}
+							.modal-content
+								.modal-header
+									%h5#exampleModalLabel.modal-title.title Address update
+									%button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+										%span{"aria-hidden" => "true"} 
+								.modal-body
+								
+									%form{:method => "post", :action => "/addresses"}
+										%input{:type => "hidden", :name => "authenticity_token", :value => "<%= form_authenticity_token %>"}
+										%input{:type => "hidden", :name => "new_user_edit[user_id]", :value => "#{current_user.id}"}
+										%input{:type => "hidden", :name => "_method", :value => "patch"}
+										.form-group.row
+											.col-sm-3
+												%label Street:
+											.col-sm-9
+												%input{:type => "text", :class => "form-control", :name => "new_user_edit[street]"}
+										.form-group.row
+											.col-sm-3
+												%label Zipcode:
+											.col-sm-9
+												%input{:type => "integer", :class => "form-control", :name => "new_user_edit[zipcode]"}
+										.form-group.row
+											.col-sm-3
+												%label City:
+											.col-sm-9
+												%input{:type => "text", :class => "form-control", :name => "new_user_edit[city]"}
+										.form-group.row
+											.col-sm-3
+												%label State:
+											.col-sm-9
+												%input{:type => "text", :class => "form-control", :name => "new_user_edit[state]"}
+										.modal-footer
+											%button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"} Close
+											%button.btn.btn-primary{:type => "button"} Save changes
+
+
+			%hr
+			%h5.title
 				Begin your order
+
+			#recommended
+				.text-left
+					%h6.title{:style => "width:100%;"} Most popular
+
 			#accordion{:role => "tablist", "aria-multiselectable" => "true"}
 				.card
 					.card-header{:role => "tab", :id => "heading1"}
 						.mb-0
-							%a{"data-toggle" => "collapse", "data-present" => "#accordion", :href => "#collapse1", "aria-expanded" => "true", "aria-controls" => "collapse1"}
+							%a{"data-toggle" => "collapse", "data-present" => "#accordion", :href => "#collapse1", "aria-expanded" => "false", "aria-controls" => "collapse1"}
 								Dim sum/lunch menu
-					#collapse1{:class => "collapse show", :role => "tabpanel", "aria-labelledby" => "heading1"}
+					#collapse1{:class => "collapse hide", :role => "tabpanel", "aria-labelledby" => "heading1"}
 						.card-block
 							lasdjklasjfldksajfldskjlfdsjlfkadfdsaljlkadjflkadsfjl
 

@@ -26,11 +26,10 @@
 
 
 #menu
-	.col-sm-12.text-center
+	.col-sm-12
 		%h3.title
 			MAIN MENU
-	%input{:type => "hidden", :id => "refreshed", :value => "no"}
-	.center.slider
+	.col-sm-12.center.slider
 		%a{"data-fancybox" => "", :href => image_path("menu/appetizer.jpg")}
 			=image_tag "menu/appetizer.jpg"
 
@@ -68,10 +67,11 @@
 			=image_tag "menu/extra.jpg"
 
 #gallery
-	.col-sm-12.text-center
-		%h3.title
-			GALLERY
+
 	.row
+		.col-sm-12
+			%h3.title
+				GALLERY
 		.col-sm-4.image-box
 			%a{"data-fancybox" => "", :href => image_path("bar.jpg")}
 				=image_tag "bar.jpg"
@@ -105,10 +105,12 @@
 				=image_tag "vip.jpg"
 
 #info
+
 	.row
 		.col-sm-5
-			%h3.title
-				BUSINESS INFORMATION
+			.col-sm-12
+				%h3.title
+					BUSINESS INFORMATION
 			.col-sm-12
 				%h4.title
 					Location

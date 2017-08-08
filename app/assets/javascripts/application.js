@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require jquery3
 //= require jquery_ujs
+//= require tether
 //= require bootstrap
 //= require jquery.slick
 //= require_tree .
