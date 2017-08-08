@@ -12,10 +12,19 @@ class UsersController < ApplicationController
 			end
 	end
 
+	def update
+		User.update(user_update)
+		redirect_to '/'
+	end
+
 
 	private
 	def new_user_registration
 		params.require(:new_user).permit(:full_name, :email, :phone, :password, :password_confirmation)
+	end
+
+	def user_update
+		params.require(:user_update).permit(:full_name, :email, :phone, :password, :password_confirmation)
 	end
 
 end

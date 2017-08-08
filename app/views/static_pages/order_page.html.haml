@@ -32,7 +32,7 @@
 										%span{"aria-hidden" => "true"} 
 								.modal-body
 								
-									%form{:method => "post", :action => "/addresses"}
+									%form{:method => "post", :action => "/addresses/:id"}
 										%input{:type => "hidden", :name => "authenticity_token", :value => "<%= form_authenticity_token %>"}
 										%input{:type => "hidden", :name => "new_user_edit[user_id]", :value => "#{current_user.id}"}
 										%input{:type => "hidden", :name => "_method", :value => "patch"}
@@ -40,25 +40,25 @@
 											.col-sm-3
 												%label Street:
 											.col-sm-9
-												%input{:type => "text", :class => "form-control", :name => "new_user_edit[street]"}
+												%input{:type => "text", :class => "form-control", :name => "new_user_edit[street]", :value => "#{current_user.address.street}"}
 										.form-group.row
 											.col-sm-3
 												%label Zipcode:
 											.col-sm-9
-												%input{:type => "integer", :class => "form-control", :name => "new_user_edit[zipcode]"}
+												%input{:type => "integer", :class => "form-control", :name => "new_user_edit[zipcode]", :value => "#{current_user.address.zipcode}"}
 										.form-group.row
 											.col-sm-3
 												%label City:
 											.col-sm-9
-												%input{:type => "text", :class => "form-control", :name => "new_user_edit[city]"}
+												%input{:type => "text", :class => "form-control", :name => "new_user_edit[city]", :value => "#{current_user.address.city}"}
 										.form-group.row
 											.col-sm-3
 												%label State:
 											.col-sm-9
-												%input{:type => "text", :class => "form-control", :name => "new_user_edit[state]"}
+												%input{:type => "text", :class => "form-control", :name => "new_user_edit[state]", :value => "#{current_user.address.state}"}
 										.modal-footer
 											%button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"} Close
-											%button.btn.btn-primary{:type => "button"} Save changes
+											%input{:type => "submit", :class => "btn btn-primary", :value => "Save changes"} 
 
 
 			%hr

@@ -11,9 +11,18 @@ class AddressesController < ApplicationController
 		end
 	end
 
+	def update
+		Address.update(update_address)
+		redirect_to order_page_path
+	end
+
 	private
 
 	def new_address
 		params.require(:new_user_address).permit(:state, :city, :zipcode, :street, :user_id)
+	end
+
+	def update_address	
+		params.require(:new_user_edit).permit(:state, :city, :zipcode, :street, :user_id)
 	end
 end

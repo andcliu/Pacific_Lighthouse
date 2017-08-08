@@ -16,11 +16,17 @@
 		img{
 			width:184px;
 			margin-top:1rem;
+
 		}
 	}
 	.nav-item{
 		margin:.5rem;
 	    text-transform: uppercase;
+	    font-weight:700;
+	    a{
+			font-family: 'Montserrat', sans-serif;
+	    }
+  
 	}
 }
 
