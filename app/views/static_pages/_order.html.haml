@@ -1,0 +1,25 @@
+%input{:type => "button", :class => "btn btn-success btn-md", :value => "Place your order"}
+%p By placing your order, you agree to our terms of service
+%hr
+%p.subtitle Order summary
+.row
+	.col-sm-6
+		%h6 Total items:
+	.col-sm-6
+		-@all_carts.each do |ac|
+			%h6{:style => "font-size:11px;"} #{ac.product.name}
+.row
+	.col-sm-6
+		%h6 Delivery fee:
+	.col-sm-6
+		%i
+			%h6 Free
+.row
+	.col-sm-6
+		%h6 Tax:
+	.col-sm-6
+		$4.00
+
+%hr
+%p.subtitle
+	Order total: $0.00

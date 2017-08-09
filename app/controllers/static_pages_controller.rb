@@ -12,5 +12,7 @@ class StaticPagesController < ApplicationController
   	@dessert = Category.first.products
   	@bbq = Category.first.products
   	@chefs = Category.first.products
+    customer_products = current_user.products
+    @all_carts = Cart.where(user_id:current_user).where(product_id:customer_products)
   end
 end

@@ -9,4 +9,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :addresses
+  resources :products
+  resources :carts
 end
