@@ -1,10 +1,11 @@
 class CartsController < ApplicationController
 	def create
-		Cart.create(product_id: params[:product_id], user_id: params[:user_id])
+		@new_cart = Cart.create(product_id: params[:product_id], user_id: params[:user_id])
 		puts "successsfully added to cart"
 		respond_to do |format|
 			format.js
-			format.html
+			format.html { redirect_to '/order_page#collapse1' }
 		end
+	
 	end
 end
