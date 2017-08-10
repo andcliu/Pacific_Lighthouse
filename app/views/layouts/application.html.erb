@@ -22,7 +22,7 @@
 						<%= link_to "Order", order_page_path, :class => "nav-link" %>
 					</li>
 					<li class="nav-item">
-						<%= link_to "Cart(#{current_user.products.count})", order_page_path, :class => "nav-link" %>
+						<%= link_to "Cart(#{current_user.products.count})", order_page_path, :class => "nav-link", "data-toggle" => "modal", "data-target" => "#viewCart" %>
 					</li>
 					<li class="nav-item">
 						<%= link_to "#{current_user.full_name}'s Account", order_page_path, :class => "nav-link", "data-toggle" => "modal", "data-target" => "#userUpdate" %>
@@ -40,6 +40,44 @@
 	</nav>
 
 	<% if current_user %>
+		<div class="modal fade" id="viewCart" tabindex="-1" role="dialog" aria-labelledby="viewCartTitle" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title title" id="viewCartTitle">Items in cart</h5>
+					</div>
+					<div class="modal-body">
+						<table class="table">
+							<thead>
+								<tr>
+									<th> item </th>
+									<th> action </th>
+								</tr>
+							</thead>
+							<tbody>
+								<% @all_carts.each do |a| %>
+								<tr>
+									<td> <%= a.product.name %> </td>
+									<td>
+										<form action="/carts/<%= a.id %>"  method="post">
+											<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+											<input type="hidden" name="_method" value="delete">
+											<input type="hidden" name="product_id" value="<%= a.product.id %>">
+											<input type="hidden" name="user_id" value="<%= current_user.id %>">
+											<input type="submit" name="" class="btn btn-danger btn-sm" value="remove">
+										</form>
+
+									</td>
+								</tr>
+								<% end %>
+							</tbody>
+						</table>
+			
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<div class="modal fade" id="userUpdate" tabindex="-1" role="dialog" aria-labelledby="userUpdateTitle" aria-hidden="true">
 			<div class="modal-dialog" role="document">
 				<div class="modal-content">

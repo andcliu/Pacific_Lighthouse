@@ -2,6 +2,7 @@
 	%h3.title Welcome, #{current_user.full_name}
 	.row
 		.col-sm-8.pull-sm-2
+
 			.row.deliv-info
 				.col-sm-3
 					%p.title Delivery information:
@@ -57,12 +58,12 @@
 
 			%hr
 
-
+		
 			%h5.title
 				Begin your order
-			#recommended
-				.text-left
-					%h6.title{:style => "width:100%;"} Most popular
+			/ #recommended
+			/ 	.text-left
+			/ 		%h6.title{:style => "width:100%;"} Most popular
 
 			#accordion{:role => "tablist", "aria-multiselectable" => "true"}
 				.card#dim-sum
@@ -107,31 +108,36 @@
 				/ 		.card-block
 				/ 			lasdjklasjfldksajfldskjlfdsjlfkadfdsaljlkadjflkadsfjl
 
-		.col-sm-3.order-box
+		.col-sm-4.order-box
 			%input{:type => "button", :class => "btn btn-success btn-md", :value => "Place your order"}
 			%p By placing your order, you agree to our terms of service
 			%hr
 			%p.subtitle Order summary
 			.row
-				.col-sm-6
-					%h6 Total items:
-				.col-sm-6
+				.col-sm-4.items-in-cart
+					%h6 Items in cart:
+				.col-sm-8
 					#user-product-list
-					-@all_carts.each do |ac|
-						%h6{:style => "font-size:11px;"} #{ac.product.name}
+						-@all_carts.each do |ac|
+							%h6{:style => "font-size:11px;"} #{ac.product.name}
 
 			.row
-				.col-sm-6
+				.col-sm-4
+					%h6 Total items:
+				.col-sm-8
+					$#{"%.2f" % @total_price}
+			.row
+				.col-sm-4
 					%h6 Delivery fee:
-				.col-sm-6
+				.col-sm-8
 					%i
 						%h6 Free
 			.row
-				.col-sm-6
+				.col-sm-4
 					%h6 Tax:
-				.col-sm-6
-					$4.00
+				.col-sm-8
+					$#{"%.2f" % @tax}
 
 			%hr
 			%p.subtitle
-				Order total: $0.00
+				Order total: $#{"%.2f" %(@tax + @total_price)}

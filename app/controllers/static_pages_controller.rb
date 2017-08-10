@@ -14,7 +14,9 @@ class StaticPagesController < ApplicationController
   	@chefs = Category.first.products
     customer_products = current_user.products
     @all_carts = Cart.where(user_id:current_user).where(product_id:customer_products)
-    
+    @total_price = User.find(current_user.id).products.sum(:price)
+    tax_rate = 0.0925
+    @tax = @total_price * tax_rate
   end
 
 

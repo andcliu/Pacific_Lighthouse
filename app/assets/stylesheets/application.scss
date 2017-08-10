@@ -169,7 +169,9 @@
 		border-radius:.75%;
 		position:fixed;
 		right:0;
-		margin-right:3.5rem;
+		top:0;
+		margin-top:5.5rem;
+		margin-right:1rem;
 			.btn{
 				width:100%;
 				border:.1px solid #999;
@@ -198,6 +200,7 @@
 			}
 		}
 	}
+
 	#recommended{
 		border:.1px solid #999;
 		padding:15px;
