@@ -127,9 +127,16 @@
 #about{
 	min-height:65vh;
 	.about-content{
-		li{
-			line-height:215%;
+		ul{
+			list-style-type: none; 
+			li{
+				line-height:215%;
+			}
+			li:before {
+				content: "\2605";
+			}
 		}
+
 	}
 	.btn-custom{
 	/*	margin-top:.75rem;*/
@@ -240,10 +247,10 @@
 
 #footer{
 	background-color:#494446;
-/*	background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), asset-url('front.png');
+	background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), asset-url('fut.jpg');
 	background-repeat:no-repeat;
 	background-size:cover;
-	background-position:left bottom;*/
+	background-position:center;
 	color:#fff;
 	text-shadow:1px 1px 1px #000;
 	.subtitle, .title{
