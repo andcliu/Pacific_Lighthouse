@@ -4,7 +4,7 @@ module Emailer
 	def send_email
 
 		mg_client = Mailgun::Client.new ENV["mail_api_key"]
-		@orderList = User.find(current_user.id).menu_items.pluck(:name)
+		@orderList = User.find(current_user.id).products.pluck(:name)
 		# Define your message parameters
 		message_params =  { from: 'ME <andcliu@gmail.com>',
 		                    to:   'ME <andcliu@gmail.com>',

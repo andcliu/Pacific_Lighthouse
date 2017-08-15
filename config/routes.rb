@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#logout'
   post 'login' => 'sessions#login'
 
-  delete 'carts/clear' => 'carts#clear'
+  post 'clear' => 'carts#clear'
 
   resources :users
   resources :addresses
   resources :products
   resources :carts
+  resources :charges
 end

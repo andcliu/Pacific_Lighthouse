@@ -1,34 +1,70 @@
 
 
 #header
-	.col-sm-6.offset-sm-3.header-box
+	
+
+
+#overlay
+	.col-sm-8.header-box
 		%h1.header-title
 			%span.smaller-title 
-				Alameda 
-			%br Pacific Lighthouse
-		/ .btn.btn-custom
-		/ 	ORDER ONLINE
+				怡景麗宴
+			%br PACIFIC LIGHTHOUSE
+		- if current_time == "9" or "10" or "11" or" 12" or "13" or "14" or "15"
+			- if current_user
+				%a{:href => order_page_path, :class => "btn btn-custom"}
+					ORDER ONLINE NOW
+			- else
 
+				%a{:href => new_user_path, :class => "btn btn-custom"}
+					ORDER ONLINE NOW	
 
 #about
 	.row
 		.col-sm-6
 			.image-box
-				=image_tag "aboutdim.jpeg"
+				=image_tag "about.png"
 		.col-sm-6
 			%h3.title
-				KEY POINTERS ABOUT US
+				ABOUT US
 			.about-content
-				%p
-					Welcome to the new and recently opened Pacific Lighthouse. Located at the outskirts and quietly huddled away in the Marina, Pacific Lighthouse is the perfect restaurant to bring family and friends for a quiet and breathtaking lunch or dinner. Enjoy authenthic and top of the line dimsum, dinner, and tea of all varieties bundled with superior customer service and a mangificent view of the Marina Harbor. Let us be your number location for all your parties, banquets, and other services.
-				%p
-					Pacific Lighthouse in Alameda has an array of services that we offer to our guests. We have an open bar where guests can sit and enjoy after meal with cable t.v set on local news and sports channels. In addition, we have a set of VIP rooms situated in our second floor, where we offer privacy or (if you're looking for a little fun) a full kareoke system side by side with 40 inch plasma hdtv's. If you need more space for your family & friends, we have an isolated "hall" on the first floor which will definitely be able to host to our occasion.
+				/ %p
+				/ 	Welcome to Alameda Pacific Lighthouse. Quietly tucked away in the Marina, Pacific Lighthouse is the perfect restaurant to bring family and friends for a gorgeous and breathtaking lunch or dinner. Enjoy authenthic dimsum and flavorful seafood dinner paired with tea of all varieties bundled with superior customer service and a mangificent view of the delta. 
+				/ %p
+				/ 	Pacific Lighthouse also provides an array of services from an open bar with a variety of beer and wine, VIP or private rooms, to rooms equipped with the latest karaoke equipments.  If you need more space for your family & friends, we have an isolated "hall" on the first floor which will definitely be able to host to our occasion.
+				%ul
+					%li Gorgeous view of the delta & yacht club
+					%li Bar with variety of beer, wine, and hard liquor
 
+					%li 800+ seating capacity with second floor
+					%li Private rooms and dining halls with center stages
+					%li Ample space for banquets and events with dance floor
+					%li Karaoke rooms with latest equipment
+					%li Authentic dim sum and seafood dining
+					%li Free lunch delivery throughout Alameda & Oakland
+				
+				%button{:class => "btn btn-custom"}
+					ORDER DIM SUM NOW
+#delivery
+	.col-sm-12.text-center.overlay
+		.empty
+			%h2.title
+				FREE DELIVERY TO ALAMEDA & OAKLAND 
+				%br FROM 10AM TO 3PM DAILY
+
+			%p *limited time promotion*
+			.col-sm-12.text-center
+				%button{:class=>"btn btn-custom"}
+					ORDER NOW
+
+#deliv-overlay
 
 #menu
 	.col-sm-12
-		%h3.title
+		%h3.title.text-center
 			MAIN MENU
+		%p.text-center slider of main menu - for weddings or events, please email for event menu - dimsum menu will be posted shortly
+
 	.col-sm-12.center.slider
 		%a{"data-fancybox" => "", :href => image_path("menu/appetizer.jpg")}
 			=image_tag "menu/appetizer.jpg"
@@ -63,96 +99,82 @@
 		%a{"data-fancybox" => "", :href => image_path("menu/soup.jpg")}
 			=image_tag "menu/soup.jpg"
 
-		%a{"data-fancybox" => "", :href => image_path("menu/extra.jpg")}
-			=image_tag "menu/extra.jpg"
+		/ %a{"data-fancybox" => "", :href => image_path("menu/extra.jpg")}
+		/ 	=image_tag "menu/extra.jpg"
 
 #gallery
+	.col-sm-12
+		%h3.title.text-center
+			GALLERY
+		%p.text-center dining hall - private rooms - bar - seafood
+		.container
+			.row
 
-	.row
-		.col-sm-12
-			%h3.title
-				GALLERY
-		.col-sm-4.image-box
-			%a{"data-fancybox" => "", :href => image_path("bar.jpg")}
-				=image_tag "bar.jpg"
-		.col-sm-4.image-box
-			%a{"data-fancybox" => "", :href => image_path("main.jpg")}
-				=image_tag "main.jpg"
-		.col-sm-4.image-box
-			%a{"data-fancybox" => "", :href => image_path("newv2.jpg")}
-				=image_tag "newv2.jpg"
+				.col-sm-4.image-box
+					%a{"data-fancybox" => "", :href => image_path("bar.jpg")}
+						=image_tag "bar.jpg"
+				.col-sm-4.image-box
+					%a{"data-fancybox" => "", :href => image_path("main.jpg")}
+						=image_tag "main.jpg"
+				.col-sm-4.image-box
+					%a{"data-fancybox" => "", :href => image_path("newv2.jpg")}
+						=image_tag "newv2.jpg"
 
-	.row.gallery-bottom-row
-		.col-sm-4.image-box
-			%a{"data-fancybox" => "", :href => image_path("fish2.jpg")}
-				=image_tag "fish2.jpg"
-		.col-sm-4.image-box
-			%a{"data-fancybox" => "", :href => image_path("newv4.jpg")}
-				=image_tag "newv4.jpg"
-		.col-sm-4.image-box
-			%a{"data-fancybox" => "", :href => image_path("front.jpg")}
-				=image_tag "front.jpg"
+			.row.gallery-bottom-row
+				.col-sm-4.image-box
+					%a{"data-fancybox" => "", :href => image_path("fish2.jpg")}
+						=image_tag "fish2.jpg"
+				.col-sm-4.image-box
+					%a{"data-fancybox" => "", :href => image_path("newv4.jpg")}
+						=image_tag "newv4.jpg"
+				.col-sm-4.image-box
+					%a{"data-fancybox" => "", :href => image_path("front.jpg")}
+						=image_tag "front.jpg"
 
-	.row.gallery-bottom-row
-		.col-sm-4.image-box
-			%a{"data-fancybox" => "", :href => image_path("fish.jpg")}
-				=image_tag "fish.jpg"
-		.col-sm-4.image-box
-			%a{"data-fancybox" => "", :href => image_path("vip2.jpg")}
-				=image_tag "vip2.jpg"
-		.col-sm-4.image-box
-			%a{"data-fancybox" => "", :href => image_path("vip.jpg")}
-				=image_tag "vip.jpg"
+			.row.gallery-bottom-row
+				.col-sm-4.image-box
+					%a{"data-fancybox" => "", :href => image_path("fish.jpg")}
+						=image_tag "fish.jpg"
+				.col-sm-4.image-box
+					%a{"data-fancybox" => "", :href => image_path("vip2.jpg")}
+						=image_tag "vip2.jpg"
+				.col-sm-4.image-box
+					%a{"data-fancybox" => "", :href => image_path("vip.jpg")}
+						=image_tag "vip.jpg"
 
-#info
+/ #info
 
-	.row
-		.col-sm-5
-			.col-sm-12
-				%h3.title
-					BUSINESS INFORMATION
-			.col-sm-12
-				%h4.title
-					Location
-				%p
-					1051 Pacific Marina 
-					%br Alameda CA, 94501
-			.col-sm-12
-				%h4.title
-					Contact
-				%p
-					Direct line: 510-263-9232
-					%br Email: info@pacificlighthouse.com
-				%p
-					For information regarding reservations and events, 
-					%br please ask to speak with either Eric/David/Henry.
-			.col-sm-12
-				%h4.title
-					Hours of operation
-				%p
-					Sunday to Thursday 
-					%br Morning | 10:00AM - 3:00PM
-					Dinner | 5:00PM - 9:30PM
-					%br Friday to Saturday
-					Morning | 10:00AM - 3:00PM
-					%br Dinner | 5:00PM - 10:00PM
-				%p
-					We're open on all major holidays.
-		.col-sm-7.maps
-			%iframe{:src => "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2672687171894!2d-122.2677239846821!3d37.78377577975781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f872b2ad641e3%3A0xc72a171ba19de788!2sPacific+Lighthouse!5e0!3m2!1sen!2sus!4v1499059133811", :width => "100%", :height => "525", :frameborder => "0" }
-
-
-
-/ #footer
-/ 	.col-sm-12
-/ 		.text-center
-/ 			%p
-/ 				Pacific Lighthouse 
-/ 				%br Copyright 2017
-/ 				All Rights Reserved
-
-
-/ #subfooter
-/ 	.col-sm-12
-/ 		.text-center
-/ 			Powered by Amplyfii
+/ 	.row
+/ 		.col-sm-5
+/ 			.col-sm-12
+/ 				%h3.title
+/ 					GENERAL INFO
+/ 			.col-sm-12
+/ 				%h5.title
+/ 					Location
+/ 				%p
+/ 					1051 Pacific Marina 
+/ 					%br Alameda CA, 94501
+/ 			.col-sm-12
+/ 				%h5.title
+/ 					Contact
+/ 				%p
+/ 					Direct line: 510-263-9232
+/ 					%br Email: info@pacificlighthouse.com
+/ 				%p
+/ 					For information regarding reservations and events, 
+/ 					%br please ask to speak with either Eric/David/Henry.
+/ 			.col-sm-12
+/ 				%h5.title
+/ 					Hours of operation
+/ 				%p
+/ 					Sunday to Thursday 
+/ 					%br Morning | 10:00AM - 3:00PM
+/ 					Dinner | 5:00PM - 9:30PM
+/ 					%br Friday to Saturday
+/ 					Morning | 10:00AM - 3:00PM
+/ 					%br Dinner | 5:00PM - 10:00PM
+/ 				%p
+/ 					We're open on all major holidays.
+/ 		.col-sm-7.maps
+/ 			%iframe{:src => "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2672687171894!2d-122.2677239846821!3d37.78377577975781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f872b2ad641e3%3A0xc72a171ba19de788!2sPacific+Lighthouse!5e0!3m2!1sen!2sus!4v1499059133811", :frameborder => "0" }

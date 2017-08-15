@@ -14,8 +14,9 @@ $(document).ready ->
     slidesToScroll: 3
     responsive: [
       {
-        breakpoint: 480
+        breakpoint: 481
         settings:
+          slidesToShow: 2
           slidesToScroll: 1
           dots: false
       }
