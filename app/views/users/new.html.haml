@@ -1,5 +1,6 @@
 #sign-in-registration
-	.col-sm-8.offset-sm-2
+
+	.col-sm-8
 		.row
 			.col-sm-12
 				%h3.title Returning customer?
@@ -21,9 +22,7 @@
 						.col-12
 							%input{:type => "submit", :class => "btn btn-primary btn-md", :value => "Log in"}
 
-		%hr
-		.row
-
+			%hr
 			.col-sm-12
 				%h3.title New customer?
 				%form{:method => "post", :action => "/users"}
@@ -61,5 +60,13 @@
 					.form-group.row.text-right
 						.col-12
 							%input{:type => "submit", :class => "btn btn-primary btn-md", :value => "Continue"}
+
+					= flash[:new_cust_error]
+
+
+	.col-sm-3.offset-sm-1.sign-in-note
+		%p.text-center Thank you for signing up! 
+		%p Please note deliveries are currently for lunch only. As a promotion, we are offering FREE deliveries (minimum of $15.00 purchase) for all customers within Oakland and Alameda.
+		%p We strive to deliver all our food fresh and hot within a 1 hour window. 
 			
-							
+								

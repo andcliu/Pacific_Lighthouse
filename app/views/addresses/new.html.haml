@@ -22,13 +22,18 @@
 							.col-12
 								%label City:
 							.col-12
-								%input{:type => "text", :class => "form-control", :name => "new_user_address[city]"}
+								%select{:class => 'form-control', :name => "new_user_address[city]"}
+									%option Alameda
+									%option Oakland
 						.col-sm-4
 							.col-12
 								%label State:
 							.col-12
-								%input{:type => "text", :class => "form-control", :name => "new_user_address[state]"}
+								%select{:class => 'form-control', :name => "new_user_address[state]"}
+									%option CA
 
 					.form-group.row.text-right
 						.col-12
 							%input{:type => "submit", :class => "btn btn-primary btn-md", :value => "Complete registration"}
+
+

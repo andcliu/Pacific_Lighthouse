@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 				redirect_to new_address_path
 			else
 				puts "failed registration"
+				flash[:new_cust_error] = @new_user.errors.full_messages.to_sentence
 				redirect_to new_user_path
 			end
 	end

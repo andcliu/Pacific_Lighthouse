@@ -32,6 +32,7 @@ gem 'stripe'
 gem "twilio-ruby"
 gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
 gem "figaro"
+gem "font-awesome-rails"
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
