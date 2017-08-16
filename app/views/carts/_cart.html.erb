@@ -1,17 +1,16 @@
 
 <div class="modal-dialog" role="document">
 	<div class="modal-content">
-		<div class="modal-header">
-			<h5 class="modal-title title" id="viewCartTitle">ITEMS IN CART</h5>
-		</div>
 		<div class="modal-body">
+
 			<table class="table">
-				<thead>
+				<h5 class="title text-center" id="viewCartTitle">ITEMS IN CART</h5>
+	<!-- 			<thead>
 					<tr>
-						<th> ITEMS </th>
-						<th> ACTION </th>
+						<th><h5 class="title"> ITEMS </h5></th>
+						<th><h5 class="title"> ACTION </h5></th>
 					</tr>
-				</thead>
+				</thead> -->
 				<tbody>
 					<% @in_carts.each do |a| %>
 					<tr>
@@ -22,7 +21,7 @@
 								<input type="hidden" name="_method" value="delete">
 								<input type="hidden" name="product_id" value="<%= a.product.id %>">
 								<input type="hidden" name="user_id" value="<%= current_user.id %>">
-								<input type="submit" name="" class="btn btn-danger btn-sm" value="remove">
+								<input type="submit" name="" class="btn btn-danger btn-sm" value="REMOVE">
 							</form>
 
 						</td>
@@ -35,7 +34,7 @@
 					
 						<form action="clear" method="post">
 							<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-							<input type="submit" name="" class="btn btn-danger btn-md" value="clear cart" data-confirm="are you sure?">
+							<input type="submit" name="" class="btn btn-danger btn-md" value="CLEAR CART" data-confirm="are you sure?">
 						</form>
 					
 				</div>

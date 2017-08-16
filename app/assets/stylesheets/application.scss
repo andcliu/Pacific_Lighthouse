@@ -336,11 +336,8 @@
 	min-height:100vh;
 	line-height:175%;
 	.order-box{
-
 		z-index: 1;
-		/*border:.1px solid #999;*/
 		border-radius:5px;
-		padding:15px;
 		position:fixed;
 		right:0;
 		top:0;
@@ -354,8 +351,8 @@
 			}
 		}
 		.order-box-content{
-			border:.1px solid #888;
-			padding:5px;
+			border:.1px solid #F9F9F9;
+			padding:25px;
 			background-color:#fff;
 		}
 		@media(max-width:481px){
@@ -374,6 +371,7 @@
 		}
 	}
 	.header{
+		margin-top:.5rem;
 		width:100%;
 		background-image:asset-url('dot.png');	
 		background-repeat:repeat;
