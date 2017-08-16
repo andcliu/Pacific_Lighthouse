@@ -10,14 +10,17 @@
 			%span.smaller-title 
 				怡景麗宴
 			%br PACIFIC LIGHTHOUSE
-		- if current_time == "9" or "10" or "11" or" 12" or "13" or "14" or "15"
+		- if current_time > "10" && current_time <  "15" 
 			- if current_user
 				%a{:href => order_page_path, :class => "btn btn-custom"}
 					ORDER ONLINE NOW
 			- else
 
 				%a{:href => new_user_path, :class => "btn btn-custom"}
-					ORDER ONLINE NOW	
+					ORDER ONLINE NOW
+		- else
+			%a{:href => root_path, :class => "btn btn-custom", "data-confirm" => "Online order only available during lunch hours."}
+				ORDER ONLINE NOW	
 
 #about
 	.row
@@ -100,14 +103,17 @@
 				/ 		%i{:class => "fa fa-car", "aria-hidden"=> "true"}  
 				/ 		%h6  Free lunch delivery throughout Alameda & Oakland
 				.col-sm-12.text-left
-					- if current_time == "9" or "10" or "11" or" 12" or "13" or "14" or "15"
+					- if current_time > "10" && current_time <  "15" 
 						- if current_user
 							%a{:href => order_page_path, :class => "btn btn-custom"}
 								ORDER ONLINE NOW
 						- else
 
 							%a{:href => new_user_path, :class => "btn btn-custom"}
-								ORDER ONLINE NOW	
+								ORDER ONLINE NOW
+					- else
+						%a{:href => root_path, :class => "btn btn-custom", "data-confirm" => "Online order only available during lunch hours."}
+							ORDER ONLINE NOW	
 #delivery
 	.col-sm-12.text-center.overlay
 		.empty
@@ -117,14 +123,17 @@
 
 			%p *limited time promotion*
 			.col-sm-12.text-center
-				- if current_time == "9" or "10" or "11" or" 12" or "13" or "14" or "15"
+				- if current_time > "10" && current_time <  "15" 
 					- if current_user
 						%a{:href => order_page_path, :class => "btn btn-custom"}
 							ORDER ONLINE NOW
 					- else
 
 						%a{:href => new_user_path, :class => "btn btn-custom"}
-							ORDER ONLINE NOW	
+							ORDER ONLINE NOW
+				- else
+					%a{:href => root_path, :class => "btn btn-custom", "data-confirm" => "Online order only available during lunch hours."}
+						ORDER ONLINE NOW	
 
 #deliv-overlay
 
@@ -181,7 +190,7 @@
 
 			/ %p *limited time promotion*
 			/ .col-sm-12.text-center
-			/ 	- if current_time == "9" or "10" or "11" or" 12" or "13" or "14" or "15"
+			/ 	- if current_time == "10" or "10" or "11" or" 12" or "13" or "14" or "15"
 			/ 		- if current_user
 			/ 			%a{:href => order_page_path, :class => "btn btn-custom"}
 			/ 				ORDER ONLINE NOW
