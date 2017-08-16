@@ -1,24 +1,5 @@
-# README
+Online order for Alameda restaurant using Rails 5 
+Delivery only enabled from 9am - 3pm, any other times signup/login button disappears.
+Integrated with Twilio, Stripe, & Mailgun
+Implementation of Rails AJAX ":remote => 'true'"
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

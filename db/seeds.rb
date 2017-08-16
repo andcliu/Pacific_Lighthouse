@@ -15,7 +15,8 @@ Category.create([{name: "Steamed", id: 1},
 		{name: "Dessert", id: 6},
 		{name: "BBQ Oveh", id: 7},
 		{name: "Chef's Recommendations", id: 8},
-		{name: "Appetizers", id: 9}
+		{name: "Appetizers", id: 9},
+		{name: "Special", id:20}
 		# {name: "BBQ", id: 10},
 		# {name: "Claypot", id: 11},
 		# {name: "Vegetable", id: 12},
@@ -377,6 +378,29 @@ Product.create([
 # 		{name: "String bean chicken in black bean sauce", price: "14.00", category_id: 19},
 # 		{name: "Sizzling chicken in black bean sauce", price: "15.00", category_id: 19}
 # 	])
+
+puts 'starting Special'
+Product.create([
+		{name: "Kung pao chicken or beef over rice", price: "9.50", category_id: 20},
+		{name: "Mongolian beef or chicken over rice", price: "9.50", category_id: 20},
+		{name: "String bean chicken or beef in black bean sauce over rice", price: "9.50", category_id: 20},
+		{name: "Sweet & sour pork or chicken over rice", price: "9.50", category_id: 20},
+		{name: "Curry chicken or beef over rice", price: "9.50", category_id: 20},
+		{name: "Roasted duck & bbq pork over rice", price: "11.50", category_id: 20},
+		{name: "BBQ pork over rice", price: "11.50", category_id: 20},
+		{name: "Spicy garlic chicken or beef over rice", price: "9.50", category_id: 20},
+		{name: "Spicy garlic eggplant over rice", price: "9.50", category_id: 20},
+		{name: "Curry vegetable & tofu over rice", price: "9.50", category_id: 20},
+		{name: "Honey walnut prawns over rice", price: "12.50", category_id: 20},
+		{name: "Bitter melon with pork ribs over rice", price: "9.50", category_id: 20},
+		{name: "Seasonal green with beef brisket over rice", price: "10.50", category_id: 20},
+		{name: "Chinese broccoli w/ chinese sausage over rice", price: "9.50", category_id: 20},
+		{name: "Chiense mushroom w/ tofu over rice", price: "9.50", category_id: 20},
+		{name: "Shrimp w/ lobser sauce over rice", price: "11.50", category_id: 20},
+		{name: "Shrimp w/ egg over rice", price: "11.50", category_id: 20},
+		{name: "Saute seafood over rice", price: "11.50", category_id: 20},
+		{name: "Whole abalone w/ chicken", price: "28.00", category_id: 20}
+	])
 
 puts 'products finished'
 

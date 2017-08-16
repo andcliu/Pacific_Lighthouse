@@ -12,6 +12,7 @@ class StaticPagesController < ApplicationController
       @dessert = Category.find(6).products
       @bbq = Category.find(7).products
       @chefs = Category.find(8).products
+      @special = Category.find(20).products
       customer_products = current_user.products
       @all_carts = Cart.where(user_id:current_user).where(product_id:customer_products)
       @total_price = User.find(current_user.id).products.sum(:price)
