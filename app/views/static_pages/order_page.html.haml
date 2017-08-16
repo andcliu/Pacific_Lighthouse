@@ -61,9 +61,9 @@
 		
 			%h4.title.text-center
 				BEGIN YOUR ORDER
-			/ #recommended
-			/ 	.text-left
-			/ 		%h6.title{:style => "width:100%;"} Most popular
+			#recommended
+				.text-left
+					%h6.title{:style => "width:100%;"} MOST POPULAR
 
 			#accordion{:role => "tablist", "aria-multiselectable" => "true"}
 				.card#dim-sum
@@ -102,33 +102,33 @@
 
 
 
-		.col-sm-3.order-box
+		.col-sm-4.order-box
 
 			%h4.subtitle.text-center ORDER SUMMARY
 			%hr
 			.row
-				.col-sm-5.items-in-cart
+				.col-sm-4.items-in-cart
 					%h6.title ITEMS:
-				.col-sm-7
+				.col-sm-8
 					#user-product-list
 						-@all_carts.each do |ac|
-							%h6{:style => "font-size:11px;"} #{ac.product.name}
+							%h6{:style => "font-size:11.5px;"} #{ac.product.name}
 
 			.row
-				.col-sm-5
+				.col-sm-4
 					%h6.title TOTAL ITEMS:
-				.col-sm-7
+				.col-sm-8
 					$#{"%.2f" % @total_price}
 			.row
-				.col-sm-5
+				.col-sm-4
 					%h6.title DELIVERY FEE:
-				.col-sm-7
+				.col-sm-8
 					%i
 						%h6 Free
 			.row
-				.col-sm-5
+				.col-sm-4
 					%h6.title TAX:
-				.col-sm-7
+				.col-sm-8
 					$#{"%.2f" % @tax}
 
 			%hr
