@@ -12,7 +12,7 @@
 
   <body>
 
-	<nav class="navbar navbar-toggleable-md navbar-light bg-faded navbar-right fixed-top">
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded navbar-center fixed-top">
 		<button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -22,13 +22,13 @@
 				<li class="nav-item active">
 					<%= link_to "Home", root_path, :class => "nav-link", "data-role" => "page" %>
 				</li>
-				<% if current_time == "9" or "10" or "11" or "12" or "13" or "14" or "15"%>
+				<% if current_time > "9" or current_time <  "24" %>
 					<% if current_user %>
 						<li class="nav-item">
 							<%= link_to "Order", order_page_path, :class => "nav-link" %>
 						</li>
-						<li class="nav-item">
-							<%= link_to "Cart(#{current_user.products.count})", order_page_path, :class => "nav-link", "data-toggle" => "modal", "data-target" => "#viewCart" %>
+						<li class="nav-item" id="cart-count">
+							<%= link_to "View cart", order_page_path,  :class => "nav-link", "data-toggle" => "modal", "data-target" => "#viewCart" %>
 						</li>
 						<li class="nav-item">
 							<%= link_to "#{current_user.full_name}'s Account", order_page_path, :class => "nav-link", "data-toggle" => "modal", "data-target" => "#userUpdate" %>
@@ -43,25 +43,25 @@
 					<% end %>
 
 				<% else %>
-					<li>testing</li>
+				
 				<% end %>
 			</ul>
 		</div>
 	</nav>
 
 	<% unless @in_carts.nil? %>
-	<div class="modal fade" id="viewCart" tabindex="-1" role="dialog" aria-labelledby="viewCartTitle" aria-hidden="true">
+	<div class="modal fade" id="viewCart" tabindex="-1" role="dialog" aria-labelledby="viewCartTitle" aria-hidden="true" remote="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title title" id="viewCartTitle">Items in cart</h5>
+					<h5 class="modal-title title" id="viewCartTitle">ITEMS IN CART</h5>
 				</div>
 				<div class="modal-body">
 					<table class="table">
 						<thead>
 							<tr>
-								<th> item </th>
-								<th> action </th>
+								<th> ITEMS </th>
+								<th> ACTION </th>
 							</tr>
 						</thead>
 						<tbody>

@@ -1,0 +1,40 @@
+%h4.subtitle.text-center ORDER SUMMARY
+%hr
+.row
+	.col-sm-5.items-in-cart
+		%h6.title ITEMS:
+	.col-sm-7
+		#user-product-list
+			-current_cart.each do |ac|
+				%h6{:style => "font-size:11px;"} #{ac.product.name}
+
+.row
+	.col-sm-5
+		%h6.title TOTAL ITEMS:
+	.col-sm-7
+		$#{"%.2f" % total_price}
+.row
+	.col-sm-5
+		%h6.title DELIVERY FEE:
+	.col-sm-7
+		%i
+			%h6 Free
+.row
+	.col-sm-5
+		%h6.title TAX:
+	.col-sm-7
+		$#{"%.2f" % tax}
+
+%hr
+
+%p.subtitle
+	-if amount_due > 15
+		%h6.title.amount AMOUNT DUE: $#{"%.2f" %(amount_due)}
+		= form_tag charges_path do
+			%article						
+				.col-sm-12.text-center
+					%script.stripe-button{"data-amount" => "$#{"%.2f" %(amount_due)}", "data-description" => "Payment for your online order", "data-key" => "#{Rails.configuration.stripe[:publishable_key]}", "data-locale" => "auto", :src => "https://checkout.stripe.com/checkout.js", :value => "Place your order"}
+					:cdata
+	-else
+		%p Minimum of $15.00 is required for delivery.
+

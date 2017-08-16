@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Yellowtail|Raleway');
+@import url(//fonts.googleapis.com/earlyaccess/cwtexkai.css);
 @import "bootstrap";
 @import 'slick';
 @import 'slick-theme';
@@ -10,6 +11,9 @@
 	-moz-box-shadow: 0 8px 6px -6px #999;
 	box-shadow: 0 8px 6px -6px #999;
 	max-height:4.5rem;
+	@media(max-width:481px){
+		height:4.5rem;
+	}
 	.navbar-nav{
 		margin-right:-.5rem;
 	}
@@ -24,22 +28,21 @@
 		}
 		@media(max-width:481px){
 			img{
-				display:invisible;
+				display:none;
 			}
 		}
 	}
 	.nav-item{
 		margin:.5rem;
-		    text-transform: uppercase;
-		    font-weight:700;
-
-  
+		text-transform: uppercase;
+		font-weight:700;
 	}
 }
 
 .subtitle{
 	font-weight:900;
 }
+
 
 *{
 	font-family: 'Raleway', sans-serif;
@@ -58,6 +61,7 @@
 
 #overlay{
 	top:0;
+
 	background-image:asset-url('dot.png');	
 	background-repeat:repeat;
 	opacity:1;
@@ -77,21 +81,22 @@
 	color:#FFF;
 
 	.smaller-title{
-		font-size:3.5rem;	
-	/*	font-family: 'Yellowtail', cursive;*/
+		font-size:4.5rem;	
+		font-family: 'cwTeXKai', serif;
 
 		@media(max-width:481px){
-			font-size:2.25rem;
+			font-size:2.5rem;
 		}
 
 	}
+
 	.header-title{
 	/*	font-family: 'Yellowtail', cursive;*/
-		font-size:4.5rem;
+		font-size:3.75rem;
 		@media(max-width:481px){
-			font-size:3.5rem;
+			font-size:1.75rem;
 		}
-		font-weight:500;
+		font-weight:700;
 		text-shadow:1px 1px 1px #000;
 	}
 	.btn-custom{
@@ -100,13 +105,14 @@
 		padding:15px;
 		color:#FFF;
 		transition:all 150ms ease-in-out;
-		border-radius:5%;
+		border-radius:10px;
 		width:auto;
 		text-shadow:1px 1px 1px #000;
 	}
 	.btn-custom:hover{
 		background-color:#1F181A;
 		color:#E9AC00;
+		border:.1px solid #E9AC00;
 	}
 }
 #header{
@@ -114,10 +120,13 @@
 	height:100vh;
 	width:100vw;
 	background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), asset-url('ship.jpg');
+	background-attachment:fixed;
 	background-size:cover;
 	background-position:bottom;
 	background-repeat:no-repeat;
-
+	@media(max-width:481px){
+		height:55vh;
+	}
 
 }
 
@@ -166,7 +175,7 @@
 		padding:15px;
 		color:#000;
 		transition:all 150ms ease-in-out;
-		border-radius:5%;
+		border-radius:10px;
 		width:auto;
 		background-color:#FFF;
 	}
@@ -192,6 +201,11 @@
 #delivery, #bg{
 	background-size:cover;
 	height:35vh;
+	@media(max-width:481px){
+		.title{
+			font-size:16px;
+		}
+	}
 	background-repeat:no-repeat;
 	color:#fff;
 	display:flex;
@@ -217,7 +231,7 @@
 			padding:15px;
 			color:#FFF;
 			transition:all 150ms ease-in-out;
-			border-radius:5%;
+			border-radius:10px;
 			width:auto;
 			background-color:transparent;
 			text-shadow:1px 1px 1px #000;
@@ -290,8 +304,9 @@
 		color:#E9AC00;
 	}
 	.chinese-title{
-		font-size:2rem;
+		font-size:3rem;
 		color:#E9AC00;
+		font-family: 'cwTeXKai', serif;
 	}
 	display:flex;
 	justify-content:center;

@@ -23,7 +23,7 @@
 						.modal-dialog{:role => "document"}
 							.modal-content
 								.modal-header
-									%h5#exampleModalLabel.modal-title.title Address update
+									%h5#exampleModalLabel.modal-title.title ADDRESS UPDATE
 									%button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
 										%span{"aria-hidden" => "true"} 
 								.modal-body
@@ -92,12 +92,12 @@
 		
 
 										%td	
-											%form{:method => "post", :action => "/carts/"}
+											%form{:method => "post", :action => "/carts/", "data-remote" => true}
 												%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
 												%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
 												%input{:type => "hidden", :name => "product_id", :value => "#{pa.id}"}
 												/ %i{:class => "fa fa-cart-plus btn", "aria-hidden" => "true", :type => "submit", "data-remote" => "true"}
-												%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", "data-remote" => true}
+												%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART"}
 
 
 

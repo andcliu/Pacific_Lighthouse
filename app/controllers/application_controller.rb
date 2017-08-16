@@ -19,6 +19,19 @@ class ApplicationController < ActionController::Base
 	@amount_due = @total_price + @tax
   end
 
+  def total_price 
+      User.find(current_user.id).products.sum(:price)
+  end
+
+  def cart_count
+    current_user.products.count
+  end
+
+  def tax
+    tax_rate = 0.0925
+    total_price * tax_rate
+  end
+
   def in_cart
     if current_user != nil
       customer_products = current_user.products
@@ -26,10 +39,11 @@ class ApplicationController < ActionController::Base
     @in_carts = Cart.where(user_id:current_user).where(product_id:customer_products)
   end
 
-  def cart
-        @cart = Cart.where(user_id:current_user).products
+  def current_cart
+        customer_products = current_user.products
+        Cart.where(user_id:current_user).where(product_id:customer_products)
   end
 
   
-  helper_method :current_user, :current_time
+  helper_method :current_user, :current_time, :current_cart, :amount_due, :total_price, :tax, :cart_count
 end

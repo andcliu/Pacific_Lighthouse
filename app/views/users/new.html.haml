@@ -1,9 +1,9 @@
 #sign-in-registration
 
-	.col-sm-8
+	.col-md-8.col-sm-12
 		.row
 			.col-sm-12
-				%h3.title Returning customer?
+				%h2.title RETURNING CUSTOMER?
 				%form{:method => "post", :action => "/login"}
 					%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
 					.form-group.row
@@ -24,7 +24,7 @@
 
 			%hr
 			.col-sm-12
-				%h3.title New customer?
+				%h2.title NEW CUSTOMER?
 				%form{:method => "post", :action => "/users"}
 					%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
 					.form-group.row
@@ -64,7 +64,7 @@
 					= flash[:new_cust_error]
 
 
-	.col-sm-3.offset-sm-1.sign-in-note
+	.col-md-3.offset-md-1.col-sm-12.sign-in-note
 		%p.text-center Thank you for signing up! 
 		%p Please note deliveries are currently for lunch only. As a promotion, we are offering FREE deliveries (minimum of $15.00 purchase) for all customers within Oakland and Alameda.
 		%p We strive to deliver all our food fresh and hot within a 1 hour window. 

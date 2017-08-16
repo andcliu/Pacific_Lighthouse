@@ -1,0 +1,46 @@
+
+<div class="modal-dialog" role="document">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h5 class="modal-title title" id="viewCartTitle">ITEMS IN CART</h5>
+		</div>
+		<div class="modal-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th> ITEMS </th>
+						<th> ACTION </th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @in_carts.each do |a| %>
+					<tr>
+						<td> <%= a.product.name %> </td>
+						<td>
+							<form action="/carts/<%= a.id %>"  method="post">
+								<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+								<input type="hidden" name="_method" value="delete">
+								<input type="hidden" name="product_id" value="<%= a.product.id %>">
+								<input type="hidden" name="user_id" value="<%= current_user.id %>">
+								<input type="submit" name="" class="btn btn-danger btn-sm" value="remove">
+							</form>
+
+						</td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+			<div id="clear_cart">
+				<div calss="col-sm-12">
+					
+						<form action="clear" method="post">
+							<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+							<input type="submit" name="" class="btn btn-danger btn-md" value="clear cart" data-confirm="are you sure?">
+						</form>
+					
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
