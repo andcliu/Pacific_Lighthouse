@@ -1,39 +1,39 @@
 #registration-address
-	.col-sm-8.offset-sm-2
-		.row
-			.col-sm-12
-				%h3.title Delivery address
-				%form{:method => "post", :action => "/addresses"}
-					%input{:type => "hidden", :name => "authenticity_token", :value => "<%= form_authenticity_token %>"}
-					%input{:type => "hidden", :name => "new_user_address[user_id]", :value => "#{current_user.id}"}
-					.form-group.row
-						.col-sm-8
-							.col-12
-								%label Street:
-							.col-12
-								%input{:type => "text", :class => "form-control", :name => "new_user_address[street]"}
-						.col-sm-4
-							.col-12
-								%label Zipcode:
-							.col-12
-								%input{:type => "integer", :class => "form-control", :name => "new_user_address[zipcode]"}
-					.form-group.row
-						.col-sm-8
-							.col-12
-								%label City:
-							.col-12
-								%select{:class => 'form-control', :name => "new_user_address[city]"}
-									%option Alameda
-									%option Oakland
-						.col-sm-4
-							.col-12
-								%label State:
-							.col-12
-								%select{:class => 'form-control', :name => "new_user_address[state]"}
-									%option CA
 
-					.form-group.row.text-right
-						.col-12
-							%input{:type => "submit", :class => "btn btn-primary btn-md", :value => "Complete registration"}
+	.col-sm-10.offset-sm-1
+		%h3.title DELIVERY ADDRESS
+		%form{:method => "post", :action => "/addresses"}
+			%input{:type => "hidden", :name => "authenticity_token", :value => "<%= form_authenticity_token %>"}
+			%input{:type => "hidden", :name => "new_user_address[user_id]", :value => "#{current_user.id}"}
+			.form-group.row
+				.col-sm-8
+					.col-12
+						%label Street:
+					.col-12
+						%input{:type => "text", :class => "form-control", :name => "new_user_address[street]"}
+				.col-sm-4
+					.col-12
+						%label Zipcode:
+					.col-12
+						%input{:type => "integer", :class => "form-control", :name => "new_user_address[zipcode]"}
+			.form-group.row
+				.col-sm-8
+					.col-12
+						%label City:
+					.col-12
+						%select{:class => 'form-control', :name => "new_user_address[city]"}
+							%option Alameda
+							%option Oakland
+				.col-sm-4
+					.col-12
+						%label State:
+					.col-12
+						%select{:class => 'form-control', :name => "new_user_address[state]"}
+							%option CA
+
+			.form-group.row.text-right
+
+				.col-sm-12
+					%input{:type => "submit", :class => "btn btn-primary btn-md", :value => "REGISTER"}
 
 

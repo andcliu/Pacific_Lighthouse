@@ -80,9 +80,8 @@
 	color:#FFF;
 
 	.smaller-title{
-		font-size:4.5rem;	
+		font-size:5.25rem;	
 		font-family: 'cwTeXKai', serif;
-
 		@media(max-width:481px){
 			font-size:2.5rem;
 		}
@@ -90,8 +89,7 @@
 	}
 
 	.header-title{
-	/*	font-family: 'Yellowtail', cursive;*/
-		font-size:3.75rem;
+		font-size:4rem;
 		@media(max-width:481px){
 			font-size:1.75rem;
 		}
@@ -104,7 +102,7 @@
 		padding:15px;
 		color:#FFF;
 		transition:all 150ms ease-in-out;
-		border-radius:10px;
+		border-radius:5px;
 		width:auto;
 		text-shadow:1px 1px 1px #000;
 	}
@@ -174,7 +172,7 @@
 		padding:15px;
 		color:#000;
 		transition:all 150ms ease-in-out;
-		border-radius:10px;
+		border-radius:5px;
 		width:auto;
 		background-color:#FFF;
 	}
@@ -230,7 +228,7 @@
 			padding:15px;
 			color:#FFF;
 			transition:all 150ms ease-in-out;
-			border-radius:10px;
+			border-radius:5px;
 			width:auto;
 			background-color:transparent;
 			text-shadow:1px 1px 1px #000;
