@@ -1,4 +1,4 @@
-<p>Online order for Alameda restaurant using Rails 5  </p>
+<p>Online order for Alameda restaurant built on RoR, SASS, & HAML   </p>
 <p>Delivery only enabled from 9am - 3pm, any other times signup/login button disappears. </p>
 <p>Integrated with Twilio, Stripe, & Mailgun  </p>
 <p>Implementation of Rails AJAX ":remote => 'true'" </p>
