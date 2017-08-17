@@ -22,29 +22,31 @@
 				<li class="nav-item">
 					<%= link_to "Home", root_path, :class => "nav-link", "data-role" => "page" %>
 				</li>
-				<% if current_time > "10" && current_time <  "15" %>
-					<% if current_user %>
-						<li class="nav-item">
-							<%= link_to "Order", order_page_path, :class => "nav-link" %>
-						</li>
-						<li class="nav-item" id="cart-count">
-							<%= link_to "View cart", order_page_path,  :class => "nav-link", "data-toggle" => "modal", "data-target" => "#viewCart" %>
-						</li>
-						<li class="nav-item">
-							<%= link_to "#{current_user.full_name}'s Account", order_page_path, :class => "nav-link", "data-toggle" => "modal", "data-target" => "#userUpdate" %>
-						</li>
-						<li class="nav-item">
-							<%= link_to "Log out", logout_path, :class => "nav-link" %>
-						</li>
-					<% else %>
+				
+				<% if current_user %>
+					<li class="nav-item">
+						<%= link_to "Order", order_page_path, :class => "nav-link" %>
+					</li>
+					<li class="nav-item" id="cart-count">
+						<%= link_to "View cart", order_page_path,  :class => "nav-link", "data-toggle" => "modal", "data-target" => "#viewCart" %>
+					</li>
+					<li class="nav-item">
+						<%= link_to "#{current_user.full_name}'s Account", order_page_path, :class => "nav-link", "data-toggle" => "modal", "data-target" => "#userUpdate" %>
+					</li>
+					<li class="nav-item">
+						<%= link_to "Log out", logout_path, :class => "nav-link" %>
+					</li>
+				<% else %>
+					<% if current_time > "10" && current_time <  "15" %>
 						<li class="nav-item">
 							<%= link_to "Sign in/up", new_user_path, :class => "nav-link" %>
 						</li>
+					<% else %>
 					<% end %>
 
-				<% else %>
-				
 				<% end %>
+
+				
 			</ul>
 		</div>
 	</nav>
