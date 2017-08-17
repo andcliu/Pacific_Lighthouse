@@ -37,12 +37,15 @@
 						<%= link_to "Log out", logout_path, :class => "nav-link" %>
 					</li>
 				<% else %>
-					<% if current_time > "10" && current_time <  "15" %>
+					<li class="nav-item">
+						<%= link_to "Sign in/up", new_user_path, :class => "nav-link" %>
+					</li>
+<!-- 					<% if current_time > "10" && current_time <  "15" %>
 						<li class="nav-item">
 							<%= link_to "Sign in/up", new_user_path, :class => "nav-link" %>
 						</li>
 					<% else %>
-					<% end %>
+					<% end %> -->
 
 				<% end %>
 
