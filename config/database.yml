@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: pacific-online-order_production
-  username: pacific-online-order
+  username: pacificonlineorder
   password: <%= ENV['PACIFIC-ONLINE-ORDER_DATABASE_PASSWORD'] %>
