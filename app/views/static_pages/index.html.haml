@@ -6,17 +6,24 @@
 			%span.smaller-title 
 				怡景麗宴
 			%br PACIFIC LIGHTHOUSE
-		- if current_time > "10" && current_time <  "15" 
-			- if current_user
-				%a{:href => order_page_path, :class => "btn btn-custom"}
-					ORDER ONLINE NOW
-			- else
-
-				%a{:href => new_user_path, :class => "btn btn-custom"}
-					ORDER ONLINE NOW
+		- if current_user
+			%a{:href => order_page_path, :class => "btn btn-custom"}
+				ORDER ONLINE NOW
 		- else
-			%a{:href => root_path, :class => "btn btn-custom", "data-confirm" => "Online order and delivery is temporarily only available for lunch session. We sincerely apologize for the inconvenience. Once our new dinner menu is set up, we will include dinner delivery service. Please stay tuned!"}
-				ORDER ONLINE NOW	
+
+			%a{:href => new_user_path, :class => "btn btn-custom"}
+					ORDER ONLINE NOW
+		/ - if current_time > "10" && current_time <  "15" 
+		/ 	- if current_user
+		/ 		%a{:href => order_page_path, :class => "btn btn-custom"}
+		/ 			ORDER ONLINE NOW
+		/ 	- else
+
+		/ 		%a{:href => new_user_path, :class => "btn btn-custom"}
+		/ 			ORDER ONLINE NOW
+		/ - else
+		/ 	%a{:href => root_path, :class => "btn btn-custom", "data-confirm" => "Online order and delivery is temporarily only available for lunch session. We sincerely apologize for the inconvenience. Once our new dinner menu is set up, we will include dinner delivery service. Please stay tuned!"}
+		/ 		ORDER ONLINE NOW	
 
 #about
 	.row
