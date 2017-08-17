@@ -78,7 +78,7 @@
 										<input type="hidden" name="_method" value="delete">
 										<input type="hidden" name="product_id" value="<%= a.product.id %>">
 										<input type="hidden" name="user_id" value="<%= current_user.id %>">
-										<input type="submit" name="" class="btn btn-danger btn-sm" value="REMOVE">
+										<input type="submit" name="" class="btn btn-danger btn-sm" value="REMOVE" data-disable-with = "Loading...">
 									</form>
 
 								</td>
@@ -89,11 +89,11 @@
 					<div id="clear_cart">
 						<div calss="col-sm-12">
 							
-								<form action="clear" method="post">
-									<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-									<input type="submit" name="" class="btn btn-danger btn-md" value="CLEAR CART" data-confirm="are you sure?">
-								</form>
-							
+							<form action="clear" method="post">
+								<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+								<input type="submit" name="" class="btn btn-danger btn-md" value="CLEAR CART" data-confirm="are you sure?">
+							</form>
+						
 						</div>
 					</div>
 

@@ -10,8 +10,13 @@ class CartsController < ApplicationController
 	end
 
 	def destroy
-		Cart.find(params[:id]).delete
-		redirect_to '/order_page#viewCart'
+		if Cart.find(params[:id]) == nil
+			redirect_to '/order_page#viewCart'
+		else
+			Cart.find(params[:id]).delete
+			redirect_to '/order_page#viewCart'
+		end
+
 	end
 
 	def clear

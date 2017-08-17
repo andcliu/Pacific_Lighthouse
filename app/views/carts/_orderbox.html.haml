@@ -2,10 +2,10 @@
 %h5.header.subtitle.text-center ORDER SUMMARY
 .col-sm-12.order-box-content
 
-	.row
+	.row.total-items
 		.col-sm-4.items-in-cart
 			%h6.title ITEMS:
-		.col-sm-8{:style => "text-overflow:clip;white-space: nowrap; overflow: hidden;"}
+		.col-sm-8{:style => "white-space: nowrap;"}
 			#user-product-list
 				-current_cart.each do |ac|
 					%h6 #{ac.product.name}

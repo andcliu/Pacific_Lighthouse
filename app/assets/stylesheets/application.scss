@@ -107,7 +107,7 @@
 		text-shadow:1px 1px 1px #000;
 	}
 	.btn-custom:hover{
-		background-color:#1F181A;
+		background-color:#443623;
 		color:#E9AC00;
 		border:.1px solid #E9AC00;
 	}
@@ -156,9 +156,8 @@
 						font-size:2.5rem;
 					}
 					
-					color:#FAFAFA;
+					color:#443623;
 				
-					text-shadow:1px 1px 1px #000;
 				}
 				h6{
 					padding:3.5px;
@@ -181,7 +180,7 @@
 
 	}
 	.btn-custom:hover{
-		background-color:#1F181A;
+		background-color:#443623;
 		color:#E9AC00;
 		border:.1px solid #E9AC00;
 	}
@@ -238,7 +237,7 @@
 			text-shadow:1px 1px 1px #000;
 		}
 		.btn-custom:hover{
-			background-color:#1F181A;
+			background-color:#443623;
 			color:#E9AC00;
 		}
 		
@@ -275,7 +274,7 @@
 
 
 #footer{
-	background-color:#1F181A;
+	background-color:#443623;
 	/*background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), asset-url('fut.jpg');*/
 	background-repeat:no-repeat;
 	background-size:cover;
@@ -311,7 +310,7 @@
 }
 
 #subfooter{
-	background-color:#1F181A;
+	background-color:#1f181a;
 	padding:25px;
 	color:#E9AC00;
 }
@@ -356,6 +355,11 @@
 			border:.1px solid #F9F9F9;
 			padding:25px;
 			background-color:#fff;
+			#user-product-list{
+				min-height:250px;
+				max-height:300px;
+				overflow:scroll;
+			}
 		}
 		@media(max-width:481px){
 			position:static;
@@ -377,7 +381,7 @@
 		width:100%;
 		background-image:asset-url('dot.png');	
 		background-repeat:repeat;
-		background-color:#1F181A;
+		background-color:#443623;
 		text-align:center;
 		color:#E9AC00;
 		text-shadow:.1px .1px .1px #000;
@@ -399,7 +403,7 @@
 		
 	}
 	.btn-custom:hover{
-		background-color:#1F181A;
+		background-color:#443623;
 		color:#E9AC00;
 	}
 
