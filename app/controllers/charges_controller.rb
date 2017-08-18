@@ -27,9 +27,9 @@ class ChargesController < ApplicationController
 		)
 
 		if charge["paid"] == true
+			redirect_to success_path
 			send_msg && send_email
 			Cart.where(user: current_user).destroy_all
-			redirect_to order_page_path
 		end
 
 		rescue Stripe::CardError => e

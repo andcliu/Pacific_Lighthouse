@@ -1,0 +1,16 @@
+#success
+	.empty
+		.container
+			.col-sm-10.offset-sm-1
+				%h3
+					Thank you for your payment #{current_user.full_name}.
+				%h6 
+					Your food is currently being cooked and prepared for delivery. Your food should be at your door within 1 hour or less. We will call you once we arrive with the number you have provided.
+				%h6
+					If there are any questions regarding your delivery, please call (925)890-5518. 
+				%h6 
+					Thank you for your business and we hope you enjoy!
+
+				%a{:href => root_path, :class => "btn btn-custom"}
+					BACK TO MAIN PAGE
+

@@ -24,5 +24,8 @@ class StaticPagesController < ApplicationController
       # @time = time_output.in_time_zone("Pacific Time (US & Canada)")
   end
 
+  def success
+  end
+
 
 end
