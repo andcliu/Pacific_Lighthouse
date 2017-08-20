@@ -274,6 +274,14 @@
 	background-color:#443623;
 	color:#fff;
 	text-shadow:1px 1px 1px #000;
+	@media(max-width:421px){
+		.empty{
+			p{
+				text-align:center;
+			}
+		}
+
+	}
 	.subtitle, .title{
 		font-family: 'Montserrat', sans-serif;
 		font-size:1.5rem;
@@ -383,6 +391,23 @@
 	.menu-items{
 		h6{
 			padding:5px;
+		}
+		@media(max-width:421px){
+			.col-sm-1{
+				display:none;
+			}
+			.col-sm-6{
+				width:100% !important;
+				
+				font-weight:700;
+				
+			}
+			.col-sm-2{
+				width: 20% !important;
+			}
+			.col-sm-3{
+				width:80% !important;
+			}
 		}
 	}
 	.btn-custom{
