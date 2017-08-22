@@ -3,7 +3,7 @@ class User < ApplicationRecord
 	has_one :address, dependent: :destroy
 	has_one :cart
 	has_many :products, through: :cart, dependent: :destroy
-
+	before_save { |current_user| current_user.email = current_user.email.downcase }
 	EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
 	validates :full_name, presence: true, length: { in: 2..20}
 	validates :phone, format: { with: /\d{3}\d{3}\d{4}/, message: "Phone: minimum of 10 integers" }

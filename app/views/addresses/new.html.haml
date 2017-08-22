@@ -3,7 +3,7 @@
 	.col-sm-10.offset-sm-1
 		%h3.title DELIVERY ADDRESS
 		%form{:method => "post", :action => "/addresses"}
-			%input{:type => "hidden", :name => "authenticity_token", :value => "<%= form_authenticity_token %>"}
+			%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
 			%input{:type => "hidden", :name => "new_user_address[user_id]", :value => "#{current_user.id}"}
 			.form-group.row
 				.col-sm-8

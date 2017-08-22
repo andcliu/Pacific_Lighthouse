@@ -28,7 +28,7 @@
 										%span{"aria-hidden" => "true"} 
 								.modal-body
 									%form{:method => "post", :action => "/addresses/:id"}
-										%input{:type => "hidden", :name => "authenticity_token", :value => "<%= form_authenticity_token %>"}
+										%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}" }
 										%input{:type => "hidden", :name => "new_user_edit[user_id]", :value => "#{current_user.id}"}
 										%input{:type => "hidden", :name => "_method", :value => "patch"}
 										.form-group.row
@@ -45,7 +45,9 @@
 											.col-sm-3
 												%label City:
 											.col-sm-9
-												%input{:type => "text", :class => "form-control", :name => "new_user_edit[city]", :value => "#{current_user.address.city}"}
+												%select{:class => 'form-control', :name => "new_user_edit[city]"}
+													%option Alameda
+													%option Oakland
 										.form-group.row
 											.col-sm-3
 												%label State:
@@ -65,10 +67,134 @@
 				/ 	.text-left
 				/ 		%h6.title MOST POPULAR
 
-			%h5.header LUNCH SPECIAL
+
+
+			%h5.header BARBECUE 
 			.row.menu-items
 
-				-@special.each do |sp|
+				-@bbq_dinner.each do |bd|
+					.col-sm-1
+
+						
+						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{bd.id}
+					.col-sm-6
+						%h6 #{bd.name}
+					.col-sm-2	
+						%h6 $#{"%.2f" % bd.price}
+					.col-sm-3							
+						%form{:method => "post", :action => "/carts/", "data-remote" => true}
+							%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+							%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+							%input{:type => "hidden", :name => "product_id", :value => "#{bd.id}"}
+							%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+
+
+			%h5.header CLAYPOT
+			.row.menu-items
+
+				-@claypot.each do |cp|
+					.col-sm-1
+
+						
+						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{cp.id}
+					.col-sm-6
+						%h6 #{cp.name}
+					.col-sm-2	
+						%h6 $#{"%.2f" % cp.price}
+					.col-sm-3							
+						%form{:method => "post", :action => "/carts/", "data-remote" => true}
+							%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+							%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+							%input{:type => "hidden", :name => "product_id", :value => "#{cp.id}"}
+							%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+
+
+
+			%h5.header VEGETABLE
+			.row.menu-items
+
+				-@veggie.each do |vg|
+					.col-sm-1
+
+						
+						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{vg.id}
+					.col-sm-6
+						%h6 #{vg.name}
+					.col-sm-2	
+						%h6 $#{"%.2f" % vg.price}
+					.col-sm-3							
+						%form{:method => "post", :action => "/carts/", "data-remote" => true}
+							%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+							%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+							%input{:type => "hidden", :name => "product_id", :value => "#{vg.id}"}
+							%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+
+
+			%h5.header RICE & NOODLE
+			.row.menu-items
+
+				-@rice_noodle.each do |rn|
+					.col-sm-1
+
+						
+						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{rn.id}
+					.col-sm-6
+						%h6 #{rn.name}
+					.col-sm-2	
+						%h6 $#{"%.2f" % rn.price}
+					.col-sm-3							
+						%form{:method => "post", :action => "/carts/", "data-remote" => true}
+							%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+							%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+							%input{:type => "hidden", :name => "product_id", :value => "#{rn.id}"}
+							%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+
+
+
+			%h5.header SEAFOOD
+			.row.menu-items
+
+				-@seafood.each do |sf|
+					.col-sm-1
+
+						
+						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{sf.id}
+					.col-sm-6
+						%h6 #{sf.name}
+					.col-sm-2	
+						%h6 $#{"%.2f" % sf.price}
+					.col-sm-3							
+						%form{:method => "post", :action => "/carts/", "data-remote" => true}
+							%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+							%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+							%input{:type => "hidden", :name => "product_id", :value => "#{sf.id}"}
+							%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+
+
+			/ %h5.header LIVE SEAFOOD
+			/ .row.menu-items
+
+			/ 	-@live_seafood.each do |ls|
+			/ 		.col-sm-1
+
+						
+			/ 			%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{ls.id}
+			/ 		.col-sm-6
+			/ 			%h6 #{ls.name}
+			/ 		.col-sm-2	
+			/ 			%h6 $#{"%.2f" % ls.price}
+			/ 		.col-sm-3							
+			/ 			%form{:method => "post", :action => "/carts/", "data-remote" => true}
+			/ 				%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+			/ 				%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+			/ 				%input{:type => "hidden", :name => "product_id", :value => "#{ls.id}"}
+			/ 				%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+
+
+			%h5.header SOUP
+			.row.menu-items
+
+				-@soup.each do |sp|
 					.col-sm-1
 
 						
@@ -84,160 +210,239 @@
 							%input{:type => "hidden", :name => "product_id", :value => "#{sp.id}"}
 							%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
 
-			%h5.header STEAMED
+
+			%h5.header PREMIUM SEAFOOD & BIRD NEST
 			.row.menu-items
 
-				-@steamed.each do |st|
-					.col-sm-1
-						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{st.id}
-					.col-sm-6
-						%h6 #{st.name}
-					.col-sm-2
-						%h6 $#{"%.2f" % st.price}
-
-
-					.col-sm-3
-						%form{:method => "post", :action => "/carts/", "data-remote" => true}
-							%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
-							%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
-							%input{:type => "hidden", :name => "product_id", :value => "#{st.id}"}
-							%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
-
-			%h5.header BUN
-			.row.menu-items
-
-				-@bun.each do |bu|
+				-@premium.each do |pr|
 					.col-sm-1
 
 						
-						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{bu.id}
+						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{pr.id}
 					.col-sm-6
-						%h6 #{bu.name}
+						%h6 #{pr.name}
 					.col-sm-2	
-						%h6 $#{"%.2f" % bu.price}
+						%h6 $#{"%.2f" % pr.price}
 					.col-sm-3							
 						%form{:method => "post", :action => "/carts/", "data-remote" => true}
 							%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
 							%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
-							%input{:type => "hidden", :name => "product_id", :value => "#{bu.id}"}
+							%input{:type => "hidden", :name => "product_id", :value => "#{pr.id}"}
 							%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
-			%h5.header BAKED
+
+
+			%h5.header BEEF & PORK
 			.row.menu-items
 
-				-@baked.each do |ba|
+				-@beef.each do |bf|
 					.col-sm-1
 
 						
-						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{ba.id}
+						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{bf.id}
 					.col-sm-6
-						%h6 #{ba.name}
+						%h6 #{bf.name}
 					.col-sm-2	
-						%h6 $#{"%.2f" % ba.price}
+						%h6 $#{"%.2f" % bf.price}
 					.col-sm-3							
 						%form{:method => "post", :action => "/carts/", "data-remote" => true}
 							%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
 							%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
-							%input{:type => "hidden", :name => "product_id", :value => "#{ba.id}"}
+							%input{:type => "hidden", :name => "product_id", :value => "#{bf.id}"}
 							%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
 
-			%h5.header RICE NOODLE ROLL
+
+			%h5.header POULTRY
 			.row.menu-items
 
-				-@rice.each do |ri|
+				-@poultry.each do |pt|
 					.col-sm-1
 
 						
-						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{ri.id}
+						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{pt.id}
 					.col-sm-6
-						%h6 #{ri.name}
+						%h6 #{pt.name}
 					.col-sm-2	
-						%h6 $#{"%.2f" % ri.price}
+						%h6 $#{"%.2f" % pt.price}
 					.col-sm-3							
 						%form{:method => "post", :action => "/carts/", "data-remote" => true}
 							%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
 							%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
-							%input{:type => "hidden", :name => "product_id", :value => "#{ri.id}"}
+							%input{:type => "hidden", :name => "product_id", :value => "#{pt.id}"}
 							%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
 
-			%h5.header PAN-FRIED & DEEP-FRIED
-			.row.menu-items
+			/ %h5.header LUNCH SPECIAL
+			/ .row.menu-items
 
-				-@fried.each do |fr|
-					.col-sm-1
+			/ 	-@special.each do |sp|
+			/ 		.col-sm-1
 
 						
-						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{fr.id}
-					.col-sm-6
-						%h6 #{fr.name}
-					.col-sm-2	
-						%h6 $#{"%.2f" % fr.price}
-					.col-sm-3							
-						%form{:method => "post", :action => "/carts/", "data-remote" => true}
-							%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
-							%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
-							%input{:type => "hidden", :name => "product_id", :value => "#{fr.id}"}
-							%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+			/ 			%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{sp.id}
+			/ 		.col-sm-6
+			/ 			%h6 #{sp.name}
+			/ 		.col-sm-2	
+			/ 			%h6 $#{"%.2f" % sp.price}
+			/ 		.col-sm-3							
+			/ 			%form{:method => "post", :action => "/carts/", "data-remote" => true}
+			/ 				%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+			/ 				%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+			/ 				%input{:type => "hidden", :name => "product_id", :value => "#{sp.id}"}
+			/ 				%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+
+			/ %h5.header STEAMED
+			/ .row.menu-items
+
+			/ 	-@steamed.each do |st|
+			/ 		.col-sm-1
+			/ 			%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{st.id}
+			/ 		.col-sm-6
+			/ 			%h6 #{st.name}
+			/ 		.col-sm-2
+			/ 			%h6 $#{"%.2f" % st.price}
 
 
+			/ 		.col-sm-3
+			/ 			%form{:method => "post", :action => "/carts/", "data-remote" => true}
+			/ 				%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+			/ 				%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+			/ 				%input{:type => "hidden", :name => "product_id", :value => "#{st.id}"}
+			/ 				%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
 
-			%h5.header DESSERT
-			.row.menu-items
+			/ %h5.header BUN
+			/ .row.menu-items
 
-				-@dessert.each do |ds|
-					.col-sm-1
-
-						
-						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{ds.id}
-					.col-sm-6
-						%h6 #{ds.name}
-					.col-sm-2	
-						%h6 $#{"%.2f" % ds.price}
-					.col-sm-3							
-						%form{:method => "post", :action => "/carts/", "data-remote" => true}
-							%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
-							%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
-							%input{:type => "hidden", :name => "product_id", :value => "#{ds.id}"}
-							%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
-
-
-			%h5.header BBQ OVEH
-			.row.menu-items
-
-				-@bbq.each do |bq|
-					.col-sm-1
+			/ 	-@bun.each do |bu|
+			/ 		.col-sm-1
 
 						
-						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{bq.id}
-					.col-sm-6
-						%h6 #{bq.name}
-					.col-sm-2	
-						%h6 $#{"%.2f" % bq.price}
-					.col-sm-3							
-						%form{:method => "post", :action => "/carts/", "data-remote" => true}
-							%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
-							%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
-							%input{:type => "hidden", :name => "product_id", :value => "#{bq.id}"}
-							%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+			/ 			%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{bu.id}
+			/ 		.col-sm-6
+			/ 			%h6 #{bu.name}
+			/ 		.col-sm-2	
+			/ 			%h6 $#{"%.2f" % bu.price}
+			/ 		.col-sm-3							
+			/ 			%form{:method => "post", :action => "/carts/", "data-remote" => true}
+			/ 				%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+			/ 				%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+			/ 				%input{:type => "hidden", :name => "product_id", :value => "#{bu.id}"}
+			/ 				%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+			/ %h5.header BAKED
+			/ .row.menu-items
 
-
-			%h5.header CHEF'S RECOMMENDATIONS
-			.row.menu-items
-
-				-@chefs.each do |cf|
-					.col-sm-1
+			/ 	-@baked.each do |ba|
+			/ 		.col-sm-1
 
 						
-						%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{cf.id}
-					.col-sm-6
-						%h6 #{cf.name}
-					.col-sm-2	
-						%h6 $#{"%.2f" % cf.price}
-					.col-sm-3							
-						%form{:method => "post", :action => "/carts/", "data-remote" => true}
-							%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
-							%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
-							%input{:type => "hidden", :name => "product_id", :value => "#{cf.id}"}
-							%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+			/ 			%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{ba.id}
+			/ 		.col-sm-6
+			/ 			%h6 #{ba.name}
+			/ 		.col-sm-2	
+			/ 			%h6 $#{"%.2f" % ba.price}
+			/ 		.col-sm-3							
+			/ 			%form{:method => "post", :action => "/carts/", "data-remote" => true}
+			/ 				%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+			/ 				%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+			/ 				%input{:type => "hidden", :name => "product_id", :value => "#{ba.id}"}
+			/ 				%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+
+			/ %h5.header RICE NOODLE ROLL
+			/ .row.menu-items
+
+			/ 	-@rice.each do |ri|
+			/ 		.col-sm-1
+
+						
+			/ 			%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{ri.id}
+			/ 		.col-sm-6
+			/ 			%h6 #{ri.name}
+			/ 		.col-sm-2	
+			/ 			%h6 $#{"%.2f" % ri.price}
+			/ 		.col-sm-3							
+			/ 			%form{:method => "post", :action => "/carts/", "data-remote" => true}
+			/ 				%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+			/ 				%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+			/ 				%input{:type => "hidden", :name => "product_id", :value => "#{ri.id}"}
+			/ 				%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+
+			/ %h5.header PAN-FRIED & DEEP-FRIED
+			/ .row.menu-items
+
+			/ 	-@fried.each do |fr|
+			/ 		.col-sm-1
+
+						
+			/ 			%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{fr.id}
+			/ 		.col-sm-6
+			/ 			%h6 #{fr.name}
+			/ 		.col-sm-2	
+			/ 			%h6 $#{"%.2f" % fr.price}
+			/ 		.col-sm-3							
+			/ 			%form{:method => "post", :action => "/carts/", "data-remote" => true}
+			/ 				%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+			/ 				%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+			/ 				%input{:type => "hidden", :name => "product_id", :value => "#{fr.id}"}
+			/ 				%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+
+
+
+			/ %h5.header DESSERT
+			/ .row.menu-items
+
+			/ 	-@dessert.each do |ds|
+			/ 		.col-sm-1
+
+						
+			/ 			%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{ds.id}
+			/ 		.col-sm-6
+			/ 			%h6 #{ds.name}
+			/ 		.col-sm-2	
+			/ 			%h6 $#{"%.2f" % ds.price}
+			/ 		.col-sm-3							
+			/ 			%form{:method => "post", :action => "/carts/", "data-remote" => true}
+			/ 				%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+			/ 				%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+			/ 				%input{:type => "hidden", :name => "product_id", :value => "#{ds.id}"}
+			/ 				%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+
+
+			/ %h5.header BBQ OVEH
+			/ .row.menu-items
+
+			/ 	-@bbq.each do |bq|
+			/ 		.col-sm-1
+
+						
+			/ 			%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{bq.id}
+			/ 		.col-sm-6
+			/ 			%h6 #{bq.name}
+			/ 		.col-sm-2	
+			/ 			%h6 $#{"%.2f" % bq.price}
+			/ 		.col-sm-3							
+			/ 			%form{:method => "post", :action => "/carts/", "data-remote" => true}
+			/ 				%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+			/ 				%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+			/ 				%input{:type => "hidden", :name => "product_id", :value => "#{bq.id}"}
+			/ 				%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
+
+
+			/ %h5.header CHEF'S RECOMMENDATIONS
+			/ .row.menu-items
+
+			/ 	-@chefs.each do |cf|
+			/ 		.col-sm-1
+
+						
+			/ 			%h6{:style => "background-color:#1F181A;display:flex; justify-content:center; align-items:center; color:#E9AC00;text-align:center; "} #{cf.id}
+			/ 		.col-sm-6
+			/ 			%h6 #{cf.name}
+			/ 		.col-sm-2	
+			/ 			%h6 $#{"%.2f" % cf.price}
+			/ 		.col-sm-3							
+			/ 			%form{:method => "post", :action => "/carts/", "data-remote" => true}
+			/ 				%input{:type => "hidden", :name => "authenticity_token", :value => "#{form_authenticity_token}"}
+			/ 				%input{:type => "hidden", :name => "user_id", :value => "#{current_user.id}"}
+			/ 				%input{:type => "hidden", :name => "product_id", :value => "#{cf.id}"}
+			/ 				%input{:type => "submit", :class => "btn btn-custom btn-sm", "aria-hidden" => "true", :value => "ADD TO CART", :style => "width:100%;"}
 		.col-sm-4.order-box
 
 			%h5.header.subtitle.text-center ORDER SUMMARY
