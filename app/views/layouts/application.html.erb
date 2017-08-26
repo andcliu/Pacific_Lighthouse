@@ -61,28 +61,23 @@
 	<% unless @in_carts.nil? %>
 	<div class="modal fade" id="viewCart" tabindex="-1" role="dialog" aria-labelledby="viewCartTitle" aria-hidden="true" remote="true">
 
-		<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-body">
 					<table class="table">
 						<h5 class="title text-center" id="viewCartTitle">ITEMS IN CART</h5>
-		<!-- 				<thead>
-							<tr>
-								<th><h5 class="title"> ITEMS </h5></th>
-								<th><h5 class="title"> ACTION </h5></th>
-							</tr>
-						</thead> -->
 						<tbody>
 							<% @in_carts.each do |a| %>
 							<tr>
 								<td> <%= a.product.name %> </td>
+								<td> $<%= "%.2f" % a.product.price %></td>
 								<td>
 									<form action="/carts/<%= a.id %>"  method="post">
 										<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 										<input type="hidden" name="_method" value="delete">
 										<input type="hidden" name="product_id" value="<%= a.product.id %>">
 										<input type="hidden" name="user_id" value="<%= current_user.id %>">
-										<input type="submit" name="" class="btn btn-danger btn-sm" value="REMOVE" data-disable-with = "Loading...">
+										<input type="submit" name="" class="btn btn-custom btn-sm" value="REMOVE" data-disable-with = "Loading...">
 									</form>
 
 								</td>
@@ -111,7 +106,7 @@
 	<% if current_user %>
 
 		<div class="modal fade" id="userUpdate" tabindex="-1" role="dialog" aria-labelledby="userUpdateTitle" aria-hidden="true">
-			<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title title" id="userUpdateTitle"><%= current_user.full_name.upcase %>'S ACCOUNT</h5>
@@ -210,7 +205,7 @@
 					<div class="col-sm-3 text-center">
 						<p class="">
 							<span class="chinese-title">怡景麗宴</span>
-							<br><span class="subtitle"> Pacific Lighthouse </span>
+							<br><span class="subtitle"> PACIFIC LIGHTHOUSE </span>
 							<br> Copyright 2017
 							<br> All Rights Reserved
 						</p>

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Yellowtail|Raleway');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Yellowtail|Roboto');
 @import url(//fonts.googleapis.com/earlyaccess/cwtexkai.css);
 @import "bootstrap";
 @import 'slick';
@@ -45,7 +45,7 @@
 
 
 *{
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Roboto', sans-serif;
 	padding:0;
 	margin:0 auto;
 	font-size:16px;
@@ -59,6 +59,22 @@
 	padding:5px;
 }
 
+#viewCart{
+	.btn-custom{
+		border:.1px solid #000;
+		padding:5px;
+		color:#000;
+		transition:all 150ms ease-in-out;
+		border-radius:5px;
+		width:auto;
+		background-color:#FFF !important;
+	}
+	.btn-custom:hover{
+		background-color:#443623 !important;
+		color:#E9AC00;
+		border:.1px solid #E9AC00;
+	}	
+}
 #overlay{
 	top:0;
 	background-image:asset-url('dot.png');	
@@ -237,6 +253,7 @@
 		.btn-custom:hover{
 			background-color:#443623;
 			color:#E9AC00;
+			border:.1px solid #E9AC00;
 		}
 	}
 }
@@ -266,6 +283,9 @@
 	}
 	.gallery-bottom-row{
 		margin-top:1rem;
+	}
+	.image-box:hover{
+		background-color:#E9AC00;
 	}
 }
 

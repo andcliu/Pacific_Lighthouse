@@ -16,7 +16,7 @@
 					%br
 					#{current_user.phone}
 				.col-sm-4.text-right
-					%button{:class => "btn btn-success btn-md", "data-toggle" => "modal", "data-target" => "#addressUpdate"}
+					%button{:class => "btn btn-success btn-sm", "data-toggle" => "modal", "data-target" => "#addressUpdate"}
 						UPDATE ADDRESS
 
 					#addressUpdate.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "exampleModalLabel", :role => "dialog", :tabindex => "3"}
@@ -463,7 +463,7 @@
 						$#{"%.2f" % @total_price}
 				.row
 					.col-sm-4
-						%h6.title DELIVERY FEE:
+						%h6.title DELIVERY:
 					.col-sm-8
 						%i
 							%h6 Free
