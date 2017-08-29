@@ -18,7 +18,7 @@ Category.create([
 		# {name: "Chef's Recommendations", id: 8},
 		# {name: "Appetizers", id: 9},
 		# {name: "Special", id:20}
-		
+
 		{name: "BBQ", id: 10},
 		{name: "Claypot", id: 11},
 		{name: "Vegetable", id: 12},
@@ -164,7 +164,6 @@ puts 'category finished'
 # 		{name: "Chinese broccoli in oyster sauce", price: "7.50", category_id: 8},
 # 		{name: "Steamed romaine lettuce in soy sauce", price: "7.50", category_id: 8},
 # 		{name: "Soy sauce chow mein", price: "7.50", category_id: 8},
-
 # 		{name: "Tai style lobster & abalone pan fried noodle or e-noodle", price: "39.00", category_id: 8},
 # 		{name: "Hometown fried thick rice noodle w/ pork, duck meat & fish cake", price: "14.00", category_id: 8},
 # 		{name: "Singapore style fried vermicelli", price: "14.00", category_id: 8},
