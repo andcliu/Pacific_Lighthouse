@@ -26,7 +26,32 @@
 				<li class="nav-item">
 					<%= link_to "Home", root_path, :class => "nav-link", "data-role" => "page" %>
 				</li>
-				
+<!-- 				
+				<% if current_user %>
+					<li class="nav-item">
+						<%= link_to "Order", order_page_path, :class => "nav-link" %>
+					</li>
+					<li class="nav-item" id="cart-count">
+						<%= link_to "View cart", order_page_path,  :class => "nav-link", "data-toggle" => "modal", "data-target" => "#viewCart" %>
+					</li>
+					<li class="nav-item">
+						<%= link_to "#{current_user.full_name}'s Account", order_page_path, :class => "nav-link", "data-toggle" => "modal", "data-target" => "#userUpdate" %>
+					</li>
+					<li class="nav-item">
+						<%= link_to "Log out", logout_path, :class => "nav-link" %>
+					</li>
+				<% else %>
+					<li class="nav-item">
+						<%= link_to "Sign in/up", new_user_path, :class => "nav-link" %>
+					</li> -->
+<!-- 					<% if current_time > "10" && current_time <  "15" %>
+						<li class="nav-item">
+							<%= link_to "Sign in/up", new_user_path, :class => "nav-link" %>
+						</li>
+					<% else %>
+					<% end %> -->
+
+				<% end %>
 
 				
 			</ul>
@@ -190,8 +215,8 @@
 							<p>
 								<span class="subtitle">CONTACT</span>
 								<br> Direct line: 510-263-9232
-								<br> Email: info@pacificlighthouse.com
-								<br> For information regarding reservations and events, please ask to speak with either Eric/David/Henry.
+								<br> Email: info@pacificlighthouse88.com
+								<br> For information regarding reservations and events, please ask to speak with either Eric or Henry.
 							</p>
 							<p>
 								<span class="subtitle">FOLLOW US</span>
@@ -211,21 +236,11 @@
 
 	<div id="subfooter">
 		<div class="col-sm-12 text-right">
-			Powered by Amplyfii
+			Powered by Andcliu
 		</div>
 	</div>
 
 
   </body>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.20/jquery.fancybox.min.js"></script>
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-	  ga('create', 'UA-89282166-1', 'auto');
-	  ga('send', 'pageview');
-
-	</script>
 </html>

@@ -7,12 +7,31 @@
 				怡景麗宴
 			%br PACIFIC LIGHTHOUSE
 			%hr{:style => "width:7.5%;border:.1px double #FFF;"}
+		/ - if current_user
+		/ 	%a{:href => order_page_path, :class => "btn btn-custom"}
+		/ 		ORDER ONLINE NOW
+		/ - else
+
+		/ 	%a{:href => new_user_path, :class => "btn btn-custom"}
+		/ 		ORDER ONLINE NOW
+
+		/ - if current_time > "10" && current_time <  "15" 
+		/ 	- if current_user
+		/ 		%a{:href => order_page_path, :class => "btn btn-custom"}
+		/ 			ORDER ONLINE NOW
+		/ 	- else
+
+		/ 		%a{:href => new_user_path, :class => "btn btn-custom"}
+		/ 			ORDER ONLINE NOW
+		/ - else
+		/ 	%a{:href => root_path, :class => "btn btn-custom", "data-confirm" => "Online order and delivery is temporarily only available for lunch session. We sincerely apologize for the inconvenience. Once our new dinner menu is set up, we will include dinner delivery service. Please stay tuned!"}
+		/ 		ORDER ONLINE NOW	
 
 #about
 	.row
 		.col-sm-7
 			.image-box
-				=image_tag "center.png"
+				=image_tag "newpic.png"
 		.col-sm-5
 			%h2.title
 				ABOUT US
@@ -22,12 +41,12 @@
 						%td  
 							%i{:class => "fa fa-anchor", "aria-hidden"=> "true"} 
 						%td
-							%h6  Gorgeous view of the delta & yacht club
+							%h6  Gorgeous view of the Oakland Estuary & yacht club
 					%tr
 						%td
 							%i{:class => "fa fa-glass", "aria-hidden"=> "true"} 
 						%td
-							%h6  Bar with variety of beer, wine, and hard liquor
+							%h6  Full bar with variety of beer, wine, hard liquor, and cocktails!
 					%tr
 						%td
 							%i{:class => "fa fa-users", "aria-hidden"=> "true"} 
@@ -43,7 +62,7 @@
 						%td
 							%i{:class => "fa fa-music", "aria-hidden"=> "true"}  
 						%td
-							%h6  Karaoke rooms with latest equipment
+							%h6  Karaoke rooms with latest equipment and system
 
 					%tr
 						%td
@@ -51,12 +70,47 @@
 						%td
 							%h6  Authentic dim sum and seafood dining
 
-					%tr
-						%td
-							%i{:class => "fa fa-car", "aria-hidden"=> "true"}  
-						%td
-							%h6  COMING SOON! Free dinner delivery throughout Alameda & Oakland
-				/ .col-sm-12.text-left
+					/ %tr
+					/ 	%td
+					/ 		%i{:class => "fa fa-car", "aria-hidden"=> "true"}  
+					/ 	%td
+					/ 		%h6  Free dinner delivery throughout Alameda & Oakland
+				.col-sm-12.text-left
+					/ - if current_user
+					/ 	%a{:href => order_page_path, :class => "btn btn-custom"}
+					/ 		ORDER ONLINE NOW
+					/ - else
+
+					/ 	%a{:href => new_user_path, :class => "btn btn-custom"}
+					/ 		ORDER ONLINE NOW
+					/ - if current_time > "10" && current_time <  "15" 
+					/ 	- if current_user
+					/ 		%a{:href => order_page_path, :class => "btn btn-custom"}
+					/ 			ORDER ONLINE NOW
+					/ 	- else
+
+					/ 		%a{:href => new_user_path, :class => "btn btn-custom"}
+					/ 			ORDER ONLINE NOW
+					/ - else
+					/ 	%a{:href => root_path, :class => "btn btn-custom", "data-confirm" => "Online order and delivery is temporarily only available for lunch session. We sincerely apologize for the inconvenience. Once our new dinner menu is set up, we will include dinner delivery service. Please stay tuned!"}
+					/ 		ORDER ONLINE NOW	
+#delivery
+	.col-sm-12.text-center.overlay
+		.empty
+			%h3.title
+				FREE DELIVERY TO ALAMEDA & OAKLAND 
+				%br COMING SOON
+
+			/ %p *limited time promotion*
+			.col-sm-12.text-center
+				/ - if current_user
+				/ 	%a{:href => order_page_path, :class => "btn btn-custom"}
+				/ 		ORDER ONLINE NOW
+				/ - else
+
+				/ 	%a{:href => new_user_path, :class => "btn btn-custom"}
+				/ 		ORDER ONLINE NOW
+				/ - if current_time > "10" && current_time <  "15" 
 				/ 	- if current_user
 				/ 		%a{:href => order_page_path, :class => "btn btn-custom"}
 				/ 			ORDER ONLINE NOW
@@ -64,18 +118,9 @@
 
 				/ 		%a{:href => new_user_path, :class => "btn btn-custom"}
 				/ 			ORDER ONLINE NOW
-
-#delivery
-	.col-sm-12.text-center.overlay
-		.empty
-			%h3.title
-				COMING SOON! 
-				%br
-				FREE DELIVERY TO ALAMEDA & OAKLAND 
-				%br FROM 5PM TO 9PM MON - FRI
-
-			/ %p *limited time promotion*
-
+				/ - else
+				/ 	%a{:href => root_path, :class => "btn btn-custom", "data-confirm" => "Online order and delivery is temporarily only available for lunch session. We sincerely apologize for the inconvenience. Once our new dinner menu is set up, we will include dinner delivery service. Please stay tuned!"}
+				/ 		ORDER ONLINE NOW	
 
 #deliv-overlay
 

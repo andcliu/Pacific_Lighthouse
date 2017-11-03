@@ -113,7 +113,7 @@
 	}
 	.btn-custom{
 		margin-top:1.5rem;
-		border:.1px solid #FFF;
+		border:1px solid #FFF;
 		padding:15px;
 		color:#FFF;
 		transition:all 150ms ease-in-out;
@@ -131,7 +131,7 @@
 	position:relative;
 	height:100vh;
 	width:100vw;
-	background-image:asset-url('newb.jpg');
+	background-image:asset-url('newb2.jpg');
 	background-attachment:fixed;
 	background-size:cover;
 	background-position:bottom;
@@ -241,7 +241,7 @@
 		    font-style: italic;
 		}
 		.btn-custom{
-			border:.1px solid #FFF;
+			border:1px solid #FFF;
 			padding:15px;
 			color:#FFF;
 			transition:all 150ms ease-in-out;
