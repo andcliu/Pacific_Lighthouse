@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'static_pages#index'
+  match '*path' => redirect('/')
 
   get 'order_page' => 'static_pages#order_page'
   get 'success' => "static_pages#success"
