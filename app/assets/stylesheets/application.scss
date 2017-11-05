@@ -107,11 +107,15 @@
 		font-size:4.5rem;
 		@media(max-width:481px){
 			font-size:1.75rem;
+			margin-top:1rem;
 		}
 		font-weight:700;
 		text-shadow:1px 1px 1px #000;
 	}
 	.subheader-title{
+		@media(max-width:481px){
+			font-size:1.25rem;
+		}
 		font-weight:700;
 		text-shadow:1px 1px 1px #000;
 	}
