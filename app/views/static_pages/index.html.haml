@@ -1,140 +1,61 @@
 #header
-	
 #overlay
-	.col-sm-7.header-box
+	.col-sm-12.header-box
+		%h1 ALAMEDA
 		%h1.header-title
-			%span.smaller-title 
-				怡景麗宴
-			%br PACIFIC LIGHTHOUSE
-			%hr{:style => "width:7.5%;border:.1px double #FFF;"}
-
-		%h3.subheader-title
-			1051 Pacific Marina
-			%br Alameda CA, 94501
-			%br (510)263-9232
-			info@pacificlighthouse88.com
-		/ - if current_user
-		/ 	%a{:href => order_page_path, :class => "btn btn-custom"}
-		/ 		ORDER ONLINE NOW
-		/ - else
-
-		/ 	%a{:href => new_user_path, :class => "btn btn-custom"}
-		/ 		ORDER ONLINE NOW
-
-		/ - if current_time > "10" && current_time <  "15" 
-		/ 	- if current_user
-		/ 		%a{:href => order_page_path, :class => "btn btn-custom"}
-		/ 			ORDER ONLINE NOW
-		/ 	- else
-
-		/ 		%a{:href => new_user_path, :class => "btn btn-custom"}
-		/ 			ORDER ONLINE NOW
-		/ - else
-		/ 	%a{:href => root_path, :class => "btn btn-custom", "data-confirm" => "Online order and delivery is temporarily only available for lunch session. We sincerely apologize for the inconvenience. Once our new dinner menu is set up, we will include dinner delivery service. Please stay tuned!"}
-		/ 		ORDER ONLINE NOW	
+			PACIFIC LIGHTHOUSE
+		%h1 SEAFOOD RESTAURANT
+		%br
+		%h5 1051 PACIFIC MARINA ALAMEDA, CA
+		%h5 #: (510)263-9232
 
 #about
 	.row
-		.col-sm-7
-			.image-box
-				=image_tag "newpic.png"
-		.col-sm-5
+		.col-md-6.col-sm-12
 			%h2.title
 				ABOUT US
-			.about-content
-				%table.table
-					%tr
-						%td  
-							%i{:class => "fa fa-anchor", "aria-hidden"=> "true"} 
-						%td
-							%h6  Gorgeous view of the Oakland Estuary & yacht club
-					%tr
-						%td
-							%i{:class => "fa fa-glass", "aria-hidden"=> "true"} 
-						%td
-							%h6  Full bar with variety of beer, wine, hard liquor, and cocktails!
-					%tr
-						%td
-							%i{:class => "fa fa-users", "aria-hidden"=> "true"} 
-						%td
-							%h6  501+ seating capacity with second floor
-					%tr
-						%td
-							%i{:class => "fa fa-birthday-cake", "aria-hidden"=> "true"}  
-						%td
-							%h6  Private rooms and dining halls with center stages
+	
+			%h5 Gorgeous view of the Oakland Estuary & yacht club
+			%h5 Full bar with variety of beer, wine, hard liquor, and cocktails!
+			%h5 501+ seating capacity with second floor
+			%h5 Private rooms and dining halls with center stages
+			%h5 Karaoke rooms with latest equipment and system
+			%h5 Authentic dim sum and seafood dining
+			%h5 Free delivery to East Bay coming soon!
 
-					%tr
-						%td
-							%i{:class => "fa fa-music", "aria-hidden"=> "true"}  
-						%td
-							%h6  Karaoke rooms with latest equipment and system
+			%button{:class=>'white-button col-sm-8 disabled'} online order coming soon
 
-					%tr
-						%td
-							%i{:class => "fa fa-cutlery", "aria-hidden"=> "true"} 
-						%td
-							%h6  Authentic dim sum and seafood dining
-
-					/ %tr
-					/ 	%td
-					/ 		%i{:class => "fa fa-car", "aria-hidden"=> "true"}  
-					/ 	%td
-					/ 		%h6  Free dinner delivery throughout Alameda & Oakland
-				.col-sm-12.text-left
-					/ - if current_user
-					/ 	%a{:href => order_page_path, :class => "btn btn-custom"}
-					/ 		ORDER ONLINE NOW
-					/ - else
-
-					/ 	%a{:href => new_user_path, :class => "btn btn-custom"}
-					/ 		ORDER ONLINE NOW
-					/ - if current_time > "10" && current_time <  "15" 
-					/ 	- if current_user
-					/ 		%a{:href => order_page_path, :class => "btn btn-custom"}
-					/ 			ORDER ONLINE NOW
-					/ 	- else
-
-					/ 		%a{:href => new_user_path, :class => "btn btn-custom"}
-					/ 			ORDER ONLINE NOW
-					/ - else
-					/ 	%a{:href => root_path, :class => "btn btn-custom", "data-confirm" => "Online order and delivery is temporarily only available for lunch session. We sincerely apologize for the inconvenience. Once our new dinner menu is set up, we will include dinner delivery service. Please stay tuned!"}
-					/ 		ORDER ONLINE NOW	
-#delivery
-	.col-sm-12.text-center.overlay
-		.empty
-			%h3.title
-				FREE DELIVERY TO ALAMEDA & OAKLAND 
-				%br COMING SOON
-
-			/ %p *limited time promotion*
-			.col-sm-12.text-center
-				/ - if current_user
-				/ 	%a{:href => order_page_path, :class => "btn btn-custom"}
-				/ 		ORDER ONLINE NOW
-				/ - else
-
-				/ 	%a{:href => new_user_path, :class => "btn btn-custom"}
-				/ 		ORDER ONLINE NOW
-				/ - if current_time > "10" && current_time <  "15" 
-				/ 	- if current_user
-				/ 		%a{:href => order_page_path, :class => "btn btn-custom"}
-				/ 			ORDER ONLINE NOW
-				/ 	- else
-
-				/ 		%a{:href => new_user_path, :class => "btn btn-custom"}
-				/ 			ORDER ONLINE NOW
-				/ - else
-				/ 	%a{:href => root_path, :class => "btn btn-custom", "data-confirm" => "Online order and delivery is temporarily only available for lunch session. We sincerely apologize for the inconvenience. Once our new dinner menu is set up, we will include dinner delivery service. Please stay tuned!"}
-				/ 		ORDER ONLINE NOW	
-
-#deliv-overlay
-
+		.col-md-5.col-sm-12.about-image-container
+			.row
+				.col-sm-4
+					=image_tag('newpic.png')
+				.col-sm-4
+					=image_tag('dimsum.jpg')
+				.col-sm-4
+					=image_tag('bar.jpg')
+				.col-sm-4
+					=image_tag('aboutdim.jpeg')
+				.col-sm-4
+					=image_tag('delta.jpg')
+				.col-sm-4
+					=image_tag('fed.jpg')
+				.col-sm-4
+					=image_tag('front.jpg')
+				.col-sm-4
+					=image_tag('main.jpg')
+				.col-sm-4
+					=image_tag('center.png')
+				.col-sm-4
+					=image_tag('fish.jpg')
+				.col-sm-4
+					=image_tag('chand2.jpg')
+				.col-sm-4
+					=image_tag('center.jpg')
 #menu
 	.col-sm-12
 		%h2.title.text-center
 			MAIN MENU
-		%p.text-center slider of main menu - for weddings or events, please email for event menu - dimsum menu will be posted shortly
+		/ %p.text-center slider of main menu - for weddings or events, please email for event menu - dimsum menu will be posted shortly
 
 	.col-sm-12.center.slider
 		%a{"data-fancybox" => "", :href => image_path("menu/appetizer.jpg")}
@@ -146,6 +67,12 @@
 		%a{"data-fancybox" => "", :href => image_path("menu/beef_pork.jpg")}
 			=image_tag "menu/beef_pork.jpg"
 
+		%a{"data-fancybox" => "", :href => image_path("menu/e_men.png")}
+			=image_tag "menu/e_men.png"
+		%a{"data-fancybox" => "", :href => image_path("menu/e_men2.png")}
+			=image_tag "menu/e_men2.png"
+		%a{"data-fancybox" => "", :href => image_path("menu/new_men.png")}
+			=image_tag "menu/new_men.png"
 		%a{"data-fancybox" => "", :href => image_path("menu/claypot.jpg")}
 			=image_tag "menu/claypot.jpg"
 
@@ -173,53 +100,54 @@
 		/ %a{"data-fancybox" => "", :href => image_path("menu/extra.jpg")}
 		/ 	=image_tag "menu/extra.jpg"
 
-
-#bg
-	.col-sm-12.text-center.overlay
-		.empty
-			%h3.title
-				WEDDINGS, BANQUETS, GRADUATIONS & OTHER SPECIAL EVENTS
-				%br WE HAVE THE REAL ESTATE TO CATER TO ALL
-		
-
+/ #special-menu
+/ 	.col-sm-12
+/ 		%h2.title.text-center
+/ 			BANQUET MENU
+/ 	.row
+/ 		.col-sm-6
+/ 			%a{"data-fancybox" => "", :href => image_path("menu/e_men.png")}
+/ 				=image_tag "menu/e_men.png"
+/ 		.col-sm-6
+/ 			%a{"data-fancybox" => "", :href => image_path("menu/e_men2.png")}
+/ 				=image_tag "menu/e_men2.png"
 #gallery
 	.col-sm-12
 		%h2.title.text-center
 			GALLERY
-		%p.text-center dining hall - private rooms - bar - seafood
-		.container
-			.row
+		/ %p.text-center dining hall - private rooms - bar - seafood
 
-				.col-sm-4.image-box
-					%a{"data-fancybox" => "", :href => image_path("bar.jpg")}
-						=image_tag "bar.jpg"
-				.col-sm-4.image-box
-					%a{"data-fancybox" => "", :href => image_path("main.jpg")}
-						=image_tag "main.jpg"
-				.col-sm-4.image-box
-					%a{"data-fancybox" => "", :href => image_path("fed.jpg")}
-						=image_tag "fed.jpg"
+		.row
 
-			.row.gallery-bottom-row
-				.col-sm-4.image-box
-					%a{"data-fancybox" => "", :href => image_path("delta.jpg")}
-						=image_tag "delta.jpg"
-				.col-sm-4.image-box
-					%a{"data-fancybox" => "", :href => image_path("3.jpg")}
-						=image_tag "3.jpg"
-				.col-sm-4.image-box
-					%a{"data-fancybox" => "", :href => image_path("front.jpg")}
-						=image_tag "front.jpg"
+			.col-sm-4.image-box
+				%a{"data-fancybox" => "", :href => image_path("bar.jpg")}
+					=image_tag "bar.jpg"
+			.col-sm-4.image-box
+				%a{"data-fancybox" => "", :href => image_path("main.jpg")}
+					=image_tag "main.jpg"
+			.col-sm-4.image-box
+				%a{"data-fancybox" => "", :href => image_path("fed.jpg")}
+					=image_tag "fed.jpg"
 
-			.row.gallery-bottom-row
-				.col-sm-4.image-box
-					%a{"data-fancybox" => "", :href => image_path("2.jpg")}
-						=image_tag "2.jpg"
-				.col-sm-4.image-box
-					%a{"data-fancybox" => "", :href => image_path("vip2.jpg")}
-						=image_tag "vip2.jpg"
-				.col-sm-4.image-box
-					%a{"data-fancybox" => "", :href => image_path("fed2.jpg")}
-						=image_tag "fed2.jpg"
+		.row.gallery-bottom-row
+			.col-sm-4.image-box
+				%a{"data-fancybox" => "", :href => image_path("delta.jpg")}
+					=image_tag "delta.jpg"
+			.col-sm-4.image-box
+				%a{"data-fancybox" => "", :href => image_path("3.jpg")}
+					=image_tag "3.jpg"
+			.col-sm-4.image-box
+				%a{"data-fancybox" => "", :href => image_path("front.jpg")}
+					=image_tag "front.jpg"
 
+		.row.gallery-bottom-row
+			.col-sm-4.image-box
+				%a{"data-fancybox" => "", :href => image_path("2.jpg")}
+					=image_tag "2.jpg"
+			.col-sm-4.image-box
+				%a{"data-fancybox" => "", :href => image_path("vip2.jpg")}
+					=image_tag "vip2.jpg"
+			.col-sm-4.image-box
+				%a{"data-fancybox" => "", :href => image_path("fed2.jpg")}
+					=image_tag "fed2.jpg"
 

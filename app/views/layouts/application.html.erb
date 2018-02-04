@@ -16,7 +16,11 @@
 
   <body>
 
-	<nav class="navbar navbar-toggleable-md navbar-light bg-faded navbar-center fixed-top">
+  	<nav class="navbar text-center fixed-top">
+  		<a class="nav-brand" href="#"><%= image_tag('logo.png') %></a>
+  	</nav>
+
+<!-- 	<nav class="navbar navbar-toggleable-md navbar-light bg-faded navbar-center fixed-top">
 		<button class="navbar-toggler navbar-toggler-left" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -26,7 +30,7 @@
 				<li class="nav-item">
 					<%= link_to "Home", root_path, :class => "nav-link", "data-role" => "page" %>
 				</li>
-<!-- 				
+			
 				<% if current_user %>
 					<li class="nav-item">
 						<%= link_to "Order", order_page_path, :class => "nav-link" %>
@@ -43,7 +47,7 @@
 				<% else %>
 					<li class="nav-item">
 						<%= link_to "Sign in/up", new_user_path, :class => "nav-link" %>
-					</li> -->
+					</li>  -->
 <!-- 					<% if current_time > "10" && current_time <  "15" %>
 						<li class="nav-item">
 							<%= link_to "Sign in/up", new_user_path, :class => "nav-link" %>
@@ -51,16 +55,15 @@
 					<% else %>
 					<% end %> -->
 
-				<% end %>
+<!-- 				<% end %>
 
 				
 			</ul>
 		</div>
-	</nav>
+	</nav> -->
 
 	<% unless @in_carts.nil? %>
 	<div class="modal fade" id="viewCart" tabindex="-1" role="dialog" aria-labelledby="viewCartTitle" aria-hidden="true" remote="true">
-
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-body">
@@ -110,7 +113,6 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title title" id="userUpdateTitle"><%= current_user.full_name.upcase %>'S ACCOUNT</h5>
-				
 					</div>
 					<div class="modal-body">
 						<div class="col-sm-12">
@@ -231,12 +233,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-
-	<div id="subfooter">
-		<div class="col-sm-12 text-right">
-			Powered by Andcliu
 		</div>
 	</div>
 

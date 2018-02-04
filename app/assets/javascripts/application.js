@@ -18,3 +18,13 @@
 //= require jquery.slick
 //= require_tree .
 
+$(document).ready(function(){
+    $(window).scroll(function() {
+        if ($(document).scrollTop() > 85) {
+            $('.navbar').css({'height':'55px','transition':'all 1s ease','opacity':'.9','padding':'5px'});
+        } else {
+            $('.navbar').css({'height':'5px','transition':'all 1s ease','opacity':'0','padding':'0'});
+        }
+        
+    })
+});
