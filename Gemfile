@@ -28,10 +28,10 @@ gem 'erubis', '~> 2.7'
 gem 'jquery-rails'
 gem "jquery-slick-rails"
 gem 'bcrypt', '~> 3.1.7'
-gem 'stripe'
-gem "twilio-ruby"
-gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
-gem "figaro"
+# gem 'stripe'
+# gem "twilio-ruby"
+# gem 'mailgun-ruby', '~>1.0.2', require: 'mailgun'
+# gem "figaro"
 gem "font-awesome-rails"
 
 source 'https://rails-assets.org' do
